@@ -2,7 +2,7 @@
 # used with modular programming, which is separate a program into parts
 
 # loi khi su dung module khac folder :)
-import messages as msg
+import materials.messages as msg
 from messages import hello, bye
 from messages import *
 
