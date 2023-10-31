@@ -67,7 +67,7 @@ public class Test {
 			}
 			case "UCS1": {
 				ISearchAlgo algo3 = new UniformCostSearch();
-				Node result5 = algo3.execute(nodeA, "G");
+				Node result5 = algo3.execute(nodeS, "G");
 
 				System.out.println("----------- UCS1 --------------");
 				System.out.println(p.printPath(result5));

@@ -23,8 +23,8 @@ public class Test {
 		e.addEdge(g, 2);
 
 		IInformedSearchAlgo greedy = new GreedyBestFirstSearchAlgo();
-		Node res = greedy.execute(s, g.getLabel());
-//		Node res = greedy.execute(s,a.getLabel(), g.getLabel());
+//		Node res = greedy.execute(s, g.getLabel());
+		Node res = greedy.execute(s,"A", g.getLabel());
 		System.out.println("----------- GBFS --------------");
 		System.out.println(NodeUtils.printPath(res));
 		System.out.println("Pastcost: " + res.getG());

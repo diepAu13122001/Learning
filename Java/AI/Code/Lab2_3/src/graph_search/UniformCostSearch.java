@@ -55,7 +55,7 @@ public class UniformCostSearch implements ISearchAlgo {
 			}
 			if (curNode.getLabel().equals(start)) {
 				curNode.setParent(null);
-				curNode.setDepth(0);
+				curNode.setPathCost(0);
 				frontier.clear();
 			}
 
