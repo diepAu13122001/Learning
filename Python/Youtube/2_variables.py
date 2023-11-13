@@ -21,3 +21,4 @@ print("Your height is: " + str(height) + "cm")
 human = True
 print(type(human))
 print("Are you a human: " + str(human))
+ 
