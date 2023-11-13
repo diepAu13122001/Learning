@@ -51,10 +51,14 @@ public class Node {
 
 	public List<Node> generateAllCandidates() {
 		List<Node> result = new ArrayList<Node>();
-		for (int i = 0; i < state.length; i++) {
-			this.state[i].move();
-			result.add(this);
+		Node cur = new Node(this.state);
+
+		for (int i = 0; i < N; i++) {
+			cur.state[i].move();
+			result.add(cur);
+
 		}
+
 		return result;
 	}
 

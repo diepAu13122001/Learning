@@ -6,11 +6,15 @@ public class HillClimbing {
 	public Node execute(Node initialState) {
 		Node curNode = initialState;
 		Node neighborNode = new Node();
+
 		List<Node> allCandidates = curNode.generateAllCandidates();
 		for (int i = 0; i < allCandidates.size(); i++) {
 			neighborNode = allCandidates.get(i);
+
+
 			if (curNode.getH() > neighborNode.getH()) {
 				curNode = neighborNode;
+				allCandidates.remove(i);
 			} else {
 				return curNode;
 			}
@@ -20,7 +24,7 @@ public class HillClimbing {
 
 	public Node executeHillClimbingWithRandomRestart(Node initialState) {
 		Node state = execute(initialState);
-		while (state.getH() != 0) {
+		while (state.getH() > 0) {
 			state.generateBoard();
 			execute(state);
 		}
@@ -31,16 +35,17 @@ public class HillClimbing {
 		Node main = new Node();
 		main.generateBoard();
 		main.displayBoard();
-		
+
 		HillClimbing hc = new HillClimbing();
 
-		
+		System.out.println();
 		System.out.println("------------ ex --------------");
 
 		hc.execute(main).displayBoard();
-		
+
+		System.out.println();
 		System.out.println("executeHillClimbingWithRandomRestart");
-		
+
 		hc.executeHillClimbingWithRandomRestart(main).displayBoard();
 	}
 

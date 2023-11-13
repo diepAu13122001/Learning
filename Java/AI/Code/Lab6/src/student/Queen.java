@@ -12,9 +12,11 @@ public class Queen {
 
 	public void move() {
 		// Enter your code here
-		if (row > 0 && row < 8) {
+		if (row < 7) {
 			this.row++;
+
 		}
+
 	}
 
 	// check whether this Queen can attack the given Queen (q)
