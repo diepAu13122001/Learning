@@ -5,7 +5,7 @@ import java.util.*;
 public class GA_NQueenAlgo {
 	public static final int POP_SIZE = 100;// Population size
 	public static final double MUTATION_RATE = 0.03;
-	public static final int MAX_ITERATIONS = 10;
+	public static final int MAX_ITERATIONS = 100;
 	List<Node> population = new ArrayList<Node>();
 	Random rd = new Random();
 
@@ -27,7 +27,7 @@ public class GA_NQueenAlgo {
 		while (K < MAX_ITERATIONS) {
 			List<Node> newPopulation = new ArrayList<Node>();
 			for (int i = 0; i < POP_SIZE; i++) {
-				Node x = getParentByRandomSelection();
+				Node x = getParentByTournamentSelection();
 				Node y = getParentByTournamentSelection();
 				Node child = reproduce(x, y);
 
@@ -95,14 +95,15 @@ public class GA_NQueenAlgo {
 		// Enter your code here
 		List<Node> newPopulation = new ArrayList<Node>();
 		int k = this.rd.nextInt(POP_SIZE);
-		while (k == 0) {
-			k = this.rd.nextInt(POP_SIZE);
+		// k = 0 -> return item 0 :)
+		if (k == 0) {
+			return this.population.get(0).getBestCandidate();
 		}
 		for (int i = 0; i < k; i++) {
 			newPopulation.add(this.population.get(i).getBestCandidate());
 		}
-		
-		Collections.sort(newPopulation);
+
+//		Collections.sort(newPopulation);
 		return newPopulation.get(0);
 	}
 
@@ -110,7 +111,7 @@ public class GA_NQueenAlgo {
 	public Node getParentByRandomSelection() {
 		// Enter your code here
 		Node node = new Node();
-		return this.population.get(rd.nextInt(POP_SIZE));
+		return this.population.get(rd.nextInt(POP_SIZE)).getBestCandidate();
 	}
 
 }

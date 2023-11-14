@@ -4,9 +4,9 @@ public class Test {
 	public static void main(String[] args) {
 		Node node = new Node();
 
-		System.out.println("--------------------------");
 		GA_NQueenAlgo alg = new GA_NQueenAlgo();
 		long startTime = System.currentTimeMillis();
+		System.out.println("Waiting...");
 		alg.execute().displayBoard();
 		long endTime = System.currentTimeMillis();
 
