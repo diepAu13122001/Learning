@@ -2,7 +2,7 @@ body {
   background-color: #eeeeee;
 }
 
-.form-layout {
+#form-layout {
   margin: 30px auto;
   width: fit-content;
   display: flex;
@@ -35,15 +35,20 @@ body {
   border-radius: 50%;
 }
 
-.form-layout form {
+#form-layout form {
     margin: 10px 15px;
     width: 350px;
 }
 
-.form-layout form button {
+#form-layout form button {
     width: 100%;
 }
 
-.form-layout .other-link {
+#form-layout .other-link {
     text-align: center;
+}
+
+#other-link {
+  text-decoration: underline;
+  color: blue;
 }
