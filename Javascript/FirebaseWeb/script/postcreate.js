@@ -3,7 +3,7 @@ import PostList from "./postlist.js";
 
 class PostCreate {
   constructor() {
-    document.querySelector("title").innerHTML = "Login";
+    document.querySelector("title").innerHTML = "Create Post";
   }
 
   initRender = (container) => {

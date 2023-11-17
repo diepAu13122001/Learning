@@ -106,7 +106,7 @@ class Login {
         // localStorage.setItem("curUser", JSON.stringify(user));
 
         // move to postList page
-        location.href ="../pages/home.html";
+        location.pathname ="/pages/home.html";
       })
       .catch((error) => {
         const errorCode = error.code;

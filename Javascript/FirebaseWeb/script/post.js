@@ -7,7 +7,7 @@ class Post {
   $commentList;
 
   constructor() {
-    document.querySelector("title").innerHTML = "Login";
+    document.querySelector("title").innerHTML = "Post";
     // get post id by router
 
     // set default values

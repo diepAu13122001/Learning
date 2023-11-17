@@ -6,7 +6,7 @@ document.getElementById("account-icon").innerHTML = getUsernameLetters();
 
 function logout(e) {
   e.preventDefault();
-  location.href = "../index.html";
+  location.pathname = "/";
 }
 
 document.getElementById("logout-btn").addEventListener("click", (e)=> {
