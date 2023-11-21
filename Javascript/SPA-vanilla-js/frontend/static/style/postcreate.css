@@ -1,0 +1,22 @@
+#created-form {
+  margin: 25px 0;
+  width: 60%;
+  }
+
+#created-form input,
+#created-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group button {
+    width: 48%;
+}
