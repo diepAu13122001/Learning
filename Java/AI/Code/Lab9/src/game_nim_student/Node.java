@@ -10,18 +10,20 @@ public class Node {
 
 	public void add(Integer val) {
 		this.data.add(val);
+		Collections.sort(this.data, DESCOMPARATOR);
 	}
 
 	public void addAll(List<Integer> data) {
 		this.data.addAll(data);
+		Collections.sort(this.data, DESCOMPARATOR);
 	}
 
 	// Get children of the current nodes
 	public List<Node> getSuccessors() {
 		// Enter your code here
 		List<Node> children = new ArrayList<Node>();
+
 		for (int i = 0; i < this.data.size(); i++) {
-			Collections.sort(this.data, DESCOMPARATOR);
 
 			int currentPoint = this.data.get(i);
 			if (!isTerminal() && currentPoint > 2) {
@@ -29,10 +31,8 @@ public class Node {
 					Node child = new Node();
 					child.add(point);
 					child.add(currentPoint - point);
-
-					ArrayList<Integer> clone = (ArrayList<Integer>) ((ArrayList) this.data).clone();
-					clone.remove(Integer.valueOf(currentPoint));
-					child.addAll(clone);
+					this.data.remove(Integer.valueOf(currentPoint));
+					child.addAll(this.data);
 					if (!children.contains(child)) {
 						children.add(child);
 						this.data.remove(Integer.valueOf(currentPoint));
@@ -40,6 +40,7 @@ public class Node {
 				}
 			}
 		}
+//		System.out.println(children.toString());
 		return children;
 	}
 
@@ -53,19 +54,13 @@ public class Node {
 
 		@Override
 		public int compare(Integer o1, Integer o2) {
-			if (o1 > o2) {
-				return -1;
-			} else if (o1 < o2) {
-				return 1;
-			} else
-				return 0;
-//			return o2.compareTo(o1);
+			return o2.compareTo(o1);
 		}
 	};
 
 	@Override
 	public String toString() {
-		Collections.sort(this.data, DESCOMPARATOR);
+//		Collections.sort(this.data, DESCOMPARATOR);
 		return this.data.toString();
 	}
 

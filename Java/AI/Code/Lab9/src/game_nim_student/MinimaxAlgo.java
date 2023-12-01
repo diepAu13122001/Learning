@@ -13,16 +13,15 @@ public class MinimaxAlgo {
 	// v <- MAX(v, MIN-VALUE(s))
 	// return v
 	public int maxValue(Node node) {
-		System.out.println("Max: \n" + node.toString());
-		if (node.isTerminal()) {
-			return 1;
-		} else {
+		System.out.println("max:" + node.toString());
+		if (!node.isTerminal()) {
 			int v = Integer.MIN_VALUE;
 			for (Node child : node.getSuccessors()) {
 				v = Math.max(v, minValue(child));
 			}
 			return v;
 		}
+		return 0;
 	}
 
 	// function MIN-VALUE(state) returns a utility value
@@ -32,15 +31,14 @@ public class MinimaxAlgo {
 	// v <- MIN(v, MAX-VALUE(s))
 	// return v
 	public int minValue(Node node) {
-		System.out.println("Min: \n" + node.toString());
-		if (node.isTerminal()) {
-			return 0;
-		} else {
+		System.out.println("min:" + node.toString());
+		if (!node.isTerminal()) {
 			int v = Integer.MAX_VALUE;
 			for (Node child : node.getSuccessors()) {
 				v = Math.min(v, maxValue(child));
 			}
 			return v;
 		}
+		return 1;
 	}
 }
