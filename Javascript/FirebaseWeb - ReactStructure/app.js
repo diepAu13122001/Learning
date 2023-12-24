@@ -50,5 +50,5 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const firebaseApp = initializeApp(firebaseConfig);
-export const firestore = getFirestore(firebaseApp);
+export const firebaseApp = await initializeApp(firebaseConfig);
+export const firestore = await getFirestore(firebaseApp);

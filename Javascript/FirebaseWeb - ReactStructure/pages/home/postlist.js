@@ -1,19 +1,17 @@
-import app from "../../app.js";
+import app, { firebaseApp, firestore } from "../../app.js";
 import {
   collection,
   getDocs,
   Timestamp,
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-lite.js";
 import Card from "../../components/card/card.js";
 import Nav from "../../components/nav/nav.js";
 import PostCreate from "./postcreate.js";
-import {
-  collection,
-  doc,
-  setDoc,
-  getDoc,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-lite.js";
-
 class PostList {
   $postList;
 
@@ -95,7 +93,15 @@ class PostList {
 
     // get list from firestore
     //todo
-    
+    const q = query(collection(firestore, "posts"));
+
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      list.push(doc);
+      console.log(doc.id, " => ", doc.data());
+    });
+
     // this.$postList = list;
     return list;
   }
@@ -108,10 +114,6 @@ class PostList {
     } else {
       return len + " posts";
     }
-  }
-
-  gotoPost(p) {
-    //todo - from localStorage
   }
 }
 
