@@ -103,7 +103,7 @@ class Login {
         // Signed in
         const user = userCredential.user;
         // save current user in localStorage
-        // localStorage.setItem("curUser", JSON.stringify(user));
+        localStorage.setItem("curUser", JSON.stringify(user));
 
         // move to postList page
         location.pathname ="/pages/home.html";

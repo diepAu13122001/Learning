@@ -4,15 +4,15 @@ import PostList, { calPostCreatedTime } from "./postlist.js";
 class Post {
   $post_id;
   $post;
-  $commentList;
 
   constructor() {
     document.querySelector("title").innerHTML = "Post";
-    // get post id by router
+    // get post information by local 
+    const currentPost = JSON.parse(localStorage.getItem("currentPost"));
 
     // set default values
-    this.$post = this.getPost(this.$post_id);
-    this.$commentList = this.getCommentList(this.$post_id);
+    this.$post_id = currentPost.id;
+    this.$post = currentPost.data;
   }
 
   initRender = (container) => {
@@ -32,7 +32,7 @@ class Post {
 
     // get comment list
     let list = ``;
-    this.$commentList.forEach((element) => {
+    this.getCommentList().forEach((element) => {
       list += `    <div class="post">
         <div class="post-details">
           <span class="created-by">${element.createdBy}</span>
@@ -56,15 +56,15 @@ class Post {
 
   <div class="post">
     <div class="post-details">
-      Posted by <span class="created-by">${this.$post.createdBy}</span>
+      Posted by <span class="created-by">${this.$post.created_by}</span>
       <span class="created-at">${calPostCreatedTime(
-        this.$post.createdAt
+        this.$post.created_at
       )}</span>
     </div>
     <div class="post-content">
       <div class="post-title">${this.$post.title}</div>
       <div class="post-subtext">
-      ${this.$post.subText}
+      ${this.$post.caption}
       </div>
     </div>
   </div>
@@ -90,12 +90,7 @@ class Post {
     console.log("comment");
   };
 
-  getPost = (post_id) => {
-    let obj = {};
-    return obj;
-  };
-
-  getCommentList = (post_id) => {
+  getCommentList = () => {
     let list = [
       {
         id: "c_001",

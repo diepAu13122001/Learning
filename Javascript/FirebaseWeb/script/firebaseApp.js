@@ -21,5 +21,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const firebaseApp = initializeApp(firebaseConfig);
+
 // khai bao database firestore
 export const db = getFirestore(firebaseApp);

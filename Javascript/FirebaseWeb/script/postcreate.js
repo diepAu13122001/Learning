@@ -5,7 +5,7 @@ class PostCreate {
   constructor() {
     document.querySelector("title").innerHTML = "Create Post";
   }
-
+ 
   initRender = (container) => {
     container.innerHTML = this.codeHTML();
 
