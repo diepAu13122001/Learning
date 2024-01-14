@@ -45,7 +45,9 @@ class Nav {
 
     navbar.appendChild(container_fluid);
 
-    container.prepend(navbar);
+    if (!container.getElementsByTagName("nav")[0]) {
+      container.prepend(navbar);
+    }
   }
 
   gotoPostList() {

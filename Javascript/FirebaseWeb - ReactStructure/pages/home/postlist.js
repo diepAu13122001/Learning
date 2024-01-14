@@ -75,14 +75,13 @@ class PostList {
 
   async addPostList(post_list_component) {
     // add post list
-    let postlist = await this.getPostList();
-    postlist.forEach((element) => {
+    await this.$postList.forEach((element) => {
       // declare some var for card
       const id = element.id;
-      const created_by = this.getUsername(element.data.created_by);
-      const created_at = calPostCreatedTime(element.data.created_at);
-      const title = element.data.title;
-      const caption = element.data.caption;
+      const created_by = getUsername(element.data().created_by);
+      const created_at = calPostCreatedTime(element.data().created_at);
+      const title = element.data().title;
+      const caption = element.data().caption;
       let card = new Card(id, created_by, created_at, title, caption);
       card.initRender(post_list_component);
     });
@@ -90,19 +89,16 @@ class PostList {
 
   async getPostList() {
     let list = [];
-
     // get list from firestore
     //todo
-    const q = query(collection(firestore, "posts"));
+    const q = await query(collection(firestore, "posts"));
 
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       list.push(doc);
-      console.log(doc.id, " => ", doc.data());
     });
-
-    // this.$postList = list;
+    this.$postList = list;
     return list;
   }
 
@@ -129,10 +125,11 @@ export function calPostCreatedTime(time) {
   const timestamp = new Timestamp(time.seconds, time.nanoseconds);
 
   const currentDate = new Date();
-  let date = new Date(timestamp.toDate().toDateString());
-
+  let date = new Date(timestamp.toDate());
   // check time past
   var diff = currentDate - date;
+  console.log(date, currentDate, diff);
+
   const minutes = Math.round(diff / (1000 * 60));
   const hours = Math.round(diff / (1000 * 60 * 60));
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));

@@ -5,12 +5,11 @@ import PostList, { calPostCreatedTime, getUsername } from "./postlist.js";
 import {
   collection,
   getDocs,
-  Timestamp,
-  getFirestore,
   doc,
   setDoc,
   getDoc,
   query,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-lite.js";
 
 class Post {
@@ -20,29 +19,10 @@ class Post {
 
     // get post information by local
     this.currentPost_id = localStorage.getItem("currentPost");
+    this.currentPost = null;
   }
 
   async initRender(container) {
-    const currentPost = null;
-    // get doc from firestore
-    const docRef = doc(db, "cities", this.currentPost_id);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-      currentPost = docSnap.data();
-    } else {
-      // docSnap.data() will be undefined in this case
-      console.log("No such document!");
-    }
-
-    // declare some var for current post
-    this.$id = currentPost.id;
-    this.$created_by = getUsername(currentPost.data.created_by);
-    this.$created_at = calPostCreatedTime(currentPost.data.created_at);
-    this.$title = currentPost.data.title;
-    this.$caption = currentPost.data.caption;
-
     // add navigator
     const body = document.getElementsByTagName("Body")[0];
     const navbar = new Nav();
@@ -58,10 +38,12 @@ class Post {
     btn_home.classList.add("btn");
     btn_home.classList.add("btn-primary");
     btn_home.innerText = "Back";
+    btn_home.addEventListener("click", this.gotoPostList.bind(this));
 
     btn_home_div.appendChild(btn_home);
     main.appendChild(btn_home_div);
 
+    await this.findPostById();
     let post = new Card(
       this.$id,
       this.$created_by,
@@ -94,6 +76,7 @@ class Post {
     comment_btn.classList.add("btn");
     comment_btn.classList.add("btn-primary");
     comment_btn.innerText = "Comment";
+    comment_btn.id = "comment-btn";
     comment_btn.addEventListener("click", this.createComment.bind(this));
     form_comment.appendChild(comment_btn);
 
@@ -107,6 +90,23 @@ class Post {
     container.appendChild(main);
   }
 
+  async findPostById() {
+    // get doc from firestore
+    const docRef = doc(firestore, "posts", this.currentPost_id);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      // declare some var for current post
+      this.$created_by = getUsername(docSnap.data().created_by);
+      this.$created_at = calPostCreatedTime(docSnap.data().created_at);
+      this.$title = docSnap.data().title;
+      this.$caption = docSnap.data().caption;
+    } else {
+      // docSnap.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }
+
   gotoPostList = () => {
     const postList = new PostList();
     app.changeActiveScreen(postList);
@@ -115,21 +115,26 @@ class Post {
   async createComment(e) {
     e.preventDefault();
     //todo
+    // get data form input field
     const uid = JSON.parse(localStorage.getItem("currentUser")).uid;
     const cmt = document.getElementById("input-comment").value;
-    const date = new Date();
-    const created_at = date.getDate();
     //validate form
-    if (!comment) {
+    if (!cmt) {
       alert("Please add a comment");
     } else {
+      // delete data on input field (avoid spam)
+      document.getElementById("input-comment").value = "";
       // add in firestore database
       const commentsRef = collection(firestore, "comments");
-      await setDoc(doc(commentsRef, id), {
+      await setDoc(doc(commentsRef), {
         title: cmt,
-        created_at: created_at,
+        created_at: serverTimestamp(),
         created_by: uid,
+        post_id: this.currentPost_id,
       });
+      //reload page
+      const post = new Post();
+      app.changeActiveScreen(post);
     }
   }
 
@@ -139,9 +144,9 @@ class Post {
     comment_list.forEach((element) => {
       // declare some var for card
       const id = element.id;
-      const created_by = getUsername(element.data.created_by);
-      const created_at = calPostCreatedTime(element.data.created_at);
-      const title = element.data.title;
+      const created_by = getUsername(element.data().created_by);
+      const created_at = calPostCreatedTime(element.data().created_at);
+      const title = element.data().title;
       const caption = null;
       let comment = new Card(id, created_by, created_at, title, caption);
       comment.initRender(comment_list_component);
@@ -155,10 +160,13 @@ class Post {
     const q = query(collection(firestore, "comments"));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      list.push(doc);
-      console.log(doc.id, " => ", doc.data());
+      // sort comment for this post
+      if (doc.data().post_id == this.currentPost_id) {
+        // doc.data() is never undefined for query doc snapshots
+        list.push(doc);
+      }
     });
+    this.commentList = list;
     return list;
   }
 }

@@ -21,7 +21,7 @@ class App {
 }
 const container = document.getElementById("app");
 const app = new App(container);
-const login = new PostList();
+const login = new Login();
 app.changeActiveScreen(login);
 
 //export instant của app chứ ko export class vì App là duy nhất
@@ -32,6 +32,7 @@ export default app;
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-lite.js";
 import PostList from "./pages/home/postlist.js";
+import Post from "./pages/home/post.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 

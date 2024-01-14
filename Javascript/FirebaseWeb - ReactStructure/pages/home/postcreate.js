@@ -1,4 +1,13 @@
+import app, { firestore } from "../../app.js";
 import Nav from "../../components/nav/nav.js";
+import Post from "./post.js";
+import {
+  collection,
+  doc,
+  setDoc,
+  Timestamp
+} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore-lite.js";
+import PostList from "./postlist.js";
 
 class PostCreate {
   constructor() {
@@ -41,6 +50,7 @@ class PostCreate {
     reset_btn.classList.add("btn");
     reset_btn.classList.add("btn-secondary");
     reset_btn.innerText = "Cancel";
+    reset_btn.addEventListener("click", this.gotoPostList.bind(this));
     div_btn_group.appendChild(reset_btn);
 
     let submit_btn = document.createElement("button");
@@ -60,15 +70,32 @@ class PostCreate {
 
   gotoPostList() {
     //todo
+    const postlist = new PostList();
+    app.changeActiveScreen(postlist);
   }
 
-  createPost(e) {
+  async createPost(e) {
     e.preventDefault();
-
     //todo
+    //get data form input field
+    const title = document.getElementById("post-title").value;
+    const caption = document.getElementById("post-subtext").value;
+    const uid = JSON.parse(localStorage.getItem("currentUser")).uid;
     // validate form
-
-    // add in firestore data
+    if (!title) {
+      alert("Please fill the title");
+    } else {
+      // add in firestore data
+      const postsRef = collection(firestore, "posts");
+      await setDoc(doc(postsRef), {
+        title: title,
+        caption: caption,
+        created_at: Timestamp.now(),
+        created_by: uid,
+      });
+      // back to postlist
+      this.gotoPostList();
+    }
   }
 }
 
