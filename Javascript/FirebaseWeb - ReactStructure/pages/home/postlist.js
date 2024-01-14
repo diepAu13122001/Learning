@@ -128,7 +128,6 @@ export function calPostCreatedTime(time) {
   let date = new Date(timestamp.toDate());
   // check time past
   var diff = currentDate - date;
-  console.log(date, currentDate, diff);
 
   const minutes = Math.round(diff / (1000 * 60));
   const hours = Math.round(diff / (1000 * 60 * 60));
