@@ -26,7 +26,7 @@ const container = document.getElementById("app");
 const app = new App(container);
 
 // check file to load html code
-if (location.href.substring(21) == "/index.html") {
+if (location.href.substring(21) == "/index.html" || location.href.substring(21) == "") {
   const login = new Login();
   app.changeActiveScreen(login);
 }
