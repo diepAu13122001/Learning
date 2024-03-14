@@ -1,6 +1,7 @@
 # slicing = create a substring by extracting elements from another string
 #           indexing[] or slice()
 #           [start:stop:end]
+#  end: lay cach may don vi?
 
 # ---------------- Indexing ----------------------
 name = "Diep Au"
