@@ -7,8 +7,8 @@ capitals = {'USA': 'Washington DC',
 
 capitals.update({'Germany': 'Berlin'})
 capitals.update({'USA': 'Las Vegas'})
-capitals.pop('China')
-capitals.clear()
+capitals.pop('China') # remove item.
+# capitals.clear()
 
 print(capitals['Vietnam'])
 print(capitals.get('Germany'))
