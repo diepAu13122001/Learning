@@ -1,6 +1,4 @@
 import Login from "./script/login.js";
-import Post from "./script/post.js";
-import PostCreate from "./script/postcreate.js";
 import PostList from "./script/postlist.js";
 
 class App {
