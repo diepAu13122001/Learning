@@ -1,6 +1,6 @@
 import os
 
-path = "D:\\Learning\\Python\\Youtube\\materials\\test.txt"
+path = "C:\\Users\\diepa\\OneDrive\\Documents\\Learning\\Python\\Youtube\\materials\\test.txt"
 
 if os.path.exists(path):
     print("That location exists!")

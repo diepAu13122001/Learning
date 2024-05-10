@@ -1,7 +1,7 @@
 import os
 
-source_file = "D:\\Learning\\Python\\materials\\test.txt"
-destination_file = "D:\\Learning\\Python\\Youtube\\test.txt"
+source_file = "C:\\Users\\diepa\\OneDrive\\Documents\\Learning\\Python\\Youtube\\materials\\test2.txt"
+destination_file = "C:\\Users\\diepa\\OneDrive\\Documents\\Learning\\Python\\Youtube\\materials2\\test.txt"
 
 try:
     if os.path.exists(destination_file):
