@@ -110,4 +110,51 @@ var platArr = depthArr.reduce(
 );
 console.log(platArr); //[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
+// build lai ham reduce -----------------------------------
+// add them mot function trong object Array
+Array.prototype.my_reduce = function (callback, init) {
+  let index = 0;
+  // kiem tra xem  co truyen doi so init khong
+  if (arguments.length < 2) {
+    index = 1;
+    init = this[0];
+  }
+  for (; index < this.length; index++) {
+    init = callback(init, this[index], index, this);
+  }
+  return init;
+};
+
+console.log(platArr.my_reduce((a, c) => a + c));
+
+// change array => object
+function arrToObj(arr) {
+  return arr.reduce((a, c) => {
+    a[`${c[0]}`] = c[1];
+    return a;
+  }, {});
+}
+
+// Expected results:
+var arr = [
+  ["name", "Diep Au"],
+  ["age", 18],
+];
+console.log(arrToObj(arr)); // { name: 'Diep Au', age: 18 }
+
+// includes() -----------------------------------------------------------------------------
+// kiem tra co chua gia tri khong => return boolean
+// string -----------------
+var s = "Hello world";
+console.log(s.includes("h")); // false
+
+// array -----------------
+var names = data.map((element) => element.name);
+console.log(names);
+console.log(names.includes("abc")); // false
+console.log(names.includes("Khoa hoc: abc")); // true (phai nhap het gia tri phan tu)
+// co truyen them vi tri bat dau tim
+console.log(names.includes("Khoa hoc: abc", 1)); // false (tim tu vi tri thu 1)
+console.log(names.includes("Khoa hoc: abc", -7)); // true (tim tu vi tri thu len + - 7)
+
 // callback function se ton thoi gian hon so voi vong lap (khong dang ke) *********
