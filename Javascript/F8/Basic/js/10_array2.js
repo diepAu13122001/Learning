@@ -125,7 +125,7 @@ Array.prototype.my_reduce = function (callback, init) {
   return init;
 };
 
-console.log(platArr.my_reduce((a, c) => a + c));
+// console.log(platArr.my_reduce((a, c) => a + c));
 
 // change array => object
 function arrToObj(arr) {
@@ -158,3 +158,25 @@ console.log(names.includes("Khoa hoc: abc", 1)); // false (tim tu vi tri thu 1)
 console.log(names.includes("Khoa hoc: abc", -7)); // true (tim tu vi tri thu len + - 7)
 
 // callback function se ton thoi gian hon so voi vong lap (khong dang ke) *********
+
+// empty -------------------------------------------
+var sample = ["a", "b"];
+sample.length = 10;
+console.log(sample); // hien thi: empty x 8 + 2 phan tu co that
+// => dung vong for i duyet array => khong hop ly
+for (let index = 0; index < sample.length; index++) {
+  console.log(sample[index]); // tra ve 8 undefined
+}
+
+// neu su dung for in (chi lap qua phan tu thuc)
+for (var i in sample) {
+  document.write(sample[i], "<br>"); // chi duyet dung 2 phan tu co gia tri
+}
+
+// cach 2: dung obj array
+var sample2 = new Array(10); // 10: length
+console.log(sample2); // empty x 10
+sample2.push(1, 2); // length + 2 => 12
+console.log(sample2.length); // 12
+
+var sample3 = new Array(10, 12); // 10, 12: cac phan tu cua mang

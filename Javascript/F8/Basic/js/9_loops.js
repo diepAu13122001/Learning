@@ -23,6 +23,7 @@ for (let index = 0; index < arr.length; index++) {
 
 // for/in - lap qua key cua object (array/ object/ string) -------------------
 // object => duyet qua cac property
+// ***duyet qua ca cac prototype cua obj
 var myInfo = {
   name: "ABC",
   age: 12,
