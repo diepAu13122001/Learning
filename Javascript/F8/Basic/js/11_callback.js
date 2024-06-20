@@ -68,6 +68,86 @@ course.forEach2((e, i, arr) => {
 
 // viet lai function find -------------------------
 // viet lai function filter -------------------------
+// k lap qua array trong (empty)
+// tra ve 1 mang chua cac element thoa dieu kien trong callback function
+var list_obj = [
+  {
+    name: "a",
+    price: 285,
+  },
+  {
+    name: "b",
+    price: 0,
+  },
+  {
+    name: "c",
+    price: 689,
+  },
+];
+
+Array.prototype.filter2 = function (cb) {
+  let newArr = [];
+  for (const i in this) {
+    if (this.hasOwnProperty(i)) {
+      if (cb(this[i], i, this)) {
+        newArr.push(this[i]);
+      }
+    }
+  }
+  return newArr;
+};
+console.log("Filter ---------------------------------");
+console.log(
+  list_obj.filter2((e, i, arr) => {
+    console.log(i, e, arr);
+    return e.price > 500;
+  })
+);
+
 // viet lai function some -------------------------
+// tra ve true/ false
+// khong chay qua array rong
+// kiem tra co phan tu nao thoa dieu kien trong callback k
+Array.prototype.some2 = function (cb) {
+  for (const i in this) {
+    if (this.hasOwnProperty(i)) {
+      if (cb(this[i], i, this)) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
+console.log("Some ---------------------------------");
+console.log(
+  list_obj.some2((e, i, arr) => {
+    console.log(i, e, arr);
+    return e.price < -500;
+  })
+);
+
 // viet lai function every -------------------------
+// return true/ false
+// khong lap qua mang rong (empty)
+// kiem tra tat ca element phai thoa dieu kien => true
+Array.prototype.every2 = function (cb) {
+  for (const i in this) {
+    if (this.hasOwnProperty(i)) {
+      if (!cb(this[i], i, this)) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+console.log("Every ---------------------------------");
+console.log(
+  list_obj.every2((e, i, arr) => {
+    console.log(i, e, arr);
+    return e.price > 200;
+  })
+);
+
 // viet lai function reduce -------------------------
