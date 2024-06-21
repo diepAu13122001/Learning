@@ -6,6 +6,52 @@
     <title>JS Basic</title>
   </head>
   <body>
+    <h1>
+      <span style="display: none">Heading</span>
+      <span>Text</span>
+      <style>
+        h1 {
+          color: red;
+        }
+      </style>
+      <script>
+        console.log("first");
+      </script>
+    </h1>
+
+    <p>Hello youuuu</p>
+
+    <input type="text" />
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <style>
+      ul {
+        display: none;
+      }
+
+      /* chi khi focus vao input moi hien ul */
+      input[type="text"]:focus ~ ul {
+        display: block;
+      }
+    </style>
+
+    <input type="checkbox" />
+
+    <select name="" id="">
+      <option value="value1">1</option>
+      <option value="value2">2</option>
+      <option value="value3">3</option>
+    </select>
+
+    <a href="http://127.0.0.1:5500/" name="a">a</a>
+    <a href="http://127.0.0.1:5500/" name="b">b</a>
+
+    <div id="div">DIV <button>click me!</button></div>
+
     <!-- <script src="./js/1_variable_comments_builtin.js"></script> -->
     <!-- <script src="./js/2_operators_datatype.js"></script> -->
     <!-- <script src="./js/3_function.js"></script> -->
@@ -17,7 +63,7 @@
     <!-- <script src="./js/9_loops.js"></script> -->
     <!-- <script src="./js/10_array2.js"></script> -->
     <!-- <script src="./js/11_callback.js"></script> -->
-    <!-- <script src="./js/12_html_dom.js"></script> -->
+    <script src="./js/12_html_dom.js"></script>
     <!-- <script src="./js/13_json_fetch.js"></script> -->
     <!-- <script src="./js/14_es6+.js"></script> -->
   </body>
