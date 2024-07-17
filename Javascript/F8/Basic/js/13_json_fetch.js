@@ -188,4 +188,49 @@ fetch(postApi + rd)
   .catch((err) => console.log(err));
 
 // JSON server -----------------------------------------------
-// tao API fake (no backend)
+// Thu vien JSON server: tao API fake (no backend)
+// Link: npm install -g json-server
+// Fake API = Mock API
+// cai dat json server (npm install -g json-server) - folder json-server
+var url = "http://localhost:3000/posts";
+// POST
+fetch(url, {
+  method: "POST",
+  body: JSON.stringify({ id: "5", title: "title 5", views: 98 }),
+})
+  .then((data) => console.log("post",data)) // return a response
+  .catch((err) => console.log(err));
+
+// GET
+// fetch(url)
+//   .then((data) => data.json())
+//   .then((json) => console.log("json-server", json))
+//   .catch((err) => console.log(err));
+
+//PATCH: chi cap nhat noi dung + thuoc tinh da co san
+// fetch(url + "/1", {
+//   method: "PATCH",
+//   body: JSON.stringify({ id: "1", title: "title 1 da sua", views: 190 }),
+// })
+//   .then((data) => console.log(data)) // return a response
+//   .catch((err) => console.log(err));
+
+//PUT: cap nhat toan bo thong tin => them duoc thuoc tinh moi
+// fetch(url + "/2", {
+//   method: "PUT",
+//   body: JSON.stringify({
+//     id: "2",
+//     title: "title 2 da sua",
+//     views: 456,
+//     new_prop: "abc",
+//   }),
+// })
+//   .then((data) => console.log(data)) // return a response
+//   .catch((err) => console.log(err));
+
+//DELETE
+// fetch(url + "/1", {
+//   method: "DELETE",
+// })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));

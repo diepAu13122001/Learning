@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "title 2 da sua",
+      "views": 456,
+      "new_prop": "abc"
+    },
+    {
+      "id": "3",
+      "title": "title 3",
+      "views": 123
+    },
+    {
+      "id": "4",
+      "title": "title 4",
+      "views": 98
+    },
+    {
+      "id": "4",
+      "title": "title 4",
+      "views": 98
+    },
+    {
+      "id": "5",
+      "title": "title 5",
+      "views": 98
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
