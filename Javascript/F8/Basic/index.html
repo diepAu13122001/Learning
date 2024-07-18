@@ -30,12 +30,27 @@
 
     <style>
       ul {
-        display: none;
+        display: block;
       }
 
       /* chi khi focus vao input moi hien ul */
       input[type="text"]:focus ~ ul {
         display: block;
+      }
+    </style>
+
+    <style>
+      .product {
+        list-style-type: none;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .product img {
+        max-width: 100px;
+        display: block;
+        margin-bottom: 10px;
       }
     </style>
 
@@ -52,6 +67,8 @@
 
     <div id="div">DIV <button>click me!</button></div>
 
+    <ul id="products"></ul>
+
     <!-- <script src="./js/1_variable_comments_builtin.js"></script> -->
     <!-- <script src="./js/2_operators_datatype.js"></script> -->
     <!-- <script src="./js/3_function.js"></script> -->
@@ -64,7 +81,8 @@
     <!-- <script src="./js/10_array2.js"></script> -->
     <!-- <script src="./js/11_callback.js"></script> -->
     <!-- <script src="./js/12_html_dom.js"></script> -->
-    <script src="./js/13_json_fetch.js"></script>
-    <!-- <script src="./js/14_es6+.js"></script> -->
+    <!-- <script src="./js/13_json_fetch.js"></script> -->
+    <script src="./js/14_es6+.js"></script>
+     <!-- <script src="fetch_ex.js"></script> -->
   </body>
 </html>

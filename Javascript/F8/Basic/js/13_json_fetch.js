@@ -198,7 +198,7 @@ fetch(url, {
   method: "POST",
   body: JSON.stringify({ id: "5", title: "title 5", views: 98 }),
 })
-  .then((data) => console.log("post",data)) // return a response
+  .then((data) => console.log("post", data)) // return a response
   .catch((err) => console.log(err));
 
 // GET
