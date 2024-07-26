@@ -24,6 +24,19 @@ VALUES  (1000, 4.99, 3, "2023-01-01"),
 SELECT * FROM transactions;
 
 
--- get total transaction by date
+-- sum
 SELECT SUM(AMOUNT), ORDER_DATE FROM TRANSACTIONS
 group by ORDER_DATE;
+
+-- max: by each date
+SELECT max(AMOUNT), ORDER_DATE FROM TRANSACTIONS
+group by ORDER_DATE;
+
+-- min: by each date
+SELECT min(AMOUNT), ORDER_DATE FROM TRANSACTIONS
+group by ORDER_DATE;
+
+-- count: count customer > 1 and not null
+SELECT count(AMOUNT), customer_id FROM TRANSACTIONS
+group by customer_id
+having count(amount) > 1 and customer_id is not null;
