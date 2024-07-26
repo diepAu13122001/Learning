@@ -1,0 +1,43 @@
+-- CREATE TABLES
+CREATE TABLE CUSTOMERS(
+	CUSTOMER_ID int PRIMARY KEY auto_increment,
+    FIRST_NAME varchar(50),
+    LAST_NAME varchar(50)
+);
+
+CREATE TABLE TRANSACTIONS (
+	TRANSACTION_ID 	INT PRIMARY KEY auto_increment,
+    AMOUNT DECIMAL(5,2),
+    CUSTOMER_ID INT,
+    foreign key (CUSTOMER_ID) 
+    references CUSTOMERS(CUSTOMER_ID)
+);
+
+-- ADD CONSTRAINT 
+ALTER TABLE TRANSACTIONS 
+DROP foreign key transactions_ibfk_1;
+
+ALTER TABLE TRANSACTIONS 
+ADD CONSTRAINT FG_2 
+foreign key (CUSTOMER_ID) references CUSTOMERS(CUSTOMER_ID);
+
+ALTER TABLE TRANSACTIONS auto_increment = 1000;
+
+-- ADD DATA
+INSERT INTO CUSTOMERS (FIRST_NAME, LAST_NAME)
+VALUES ("Fred", "Fish"),
+		("Larry", "Lobster"),
+        ("Bubble", "Bass");
+        
+INSERT INTO TRANSACTIONS (AMOUNT, CUSTOMER_ID)
+VALUES (4.99,3),
+		(2.89,2),
+        (3.38,3),
+        (4.99,1);
+        
+SELECT * FROM CUSTOMERS;
+SELECT * FROM TRANSACTIONS;
+
+-- DELETE DATA WITH RELATIONSHIP
+-- delete all foreign key => can delete data 
+DELETE FROM CUSTOMERS WHERE CUSTOMER_ID = 3;

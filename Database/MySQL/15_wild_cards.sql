@@ -1,0 +1,13 @@
+-- wild cards character %
+-- used to substitute one or more characters in a string
+
+-- BECOME WITH SPECIFIC CHARACTERS
+SELECT * FROM EMPLOYEES WHERE HIRE_DATE LIKE "2023%";
+
+-- END WITH SPECIFIC CHARACTERS
+SELECT * FROM EMPLOYEES WHERE FIRST_NAME = "%P";
+
+-- WITH UNEXPECTED CHARACTERS (NEED TO KNOW THE POSITIONS)
+SELECT * FROM EMPLOYEES WHERE JOB LIKE "_OOK_"; -- => no data
+SELECT * FROM EMPLOYEES WHERE HIRE_DATE LIKE "____-01-__"; -- => all data with jan hire_date
+SELECT * FROM EMPLOYEES WHERE FIRST_NAME LIKE "_a%"; -- "a" has index 1 in string

@@ -1,0 +1,6 @@
+-- default: asc (sort A -> Z)
+SELECT * FROM TRANSACTIONS order by AMOUNT;
+
+-- REVERSE: DESC (sort Z -> A)
+SELECT * FROM TRANSACTIONS 
+order by AMOUNT DESC, CUSTOMER_ID DESC;
