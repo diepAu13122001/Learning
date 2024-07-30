@@ -1,0 +1,19 @@
+Hard Skills
+Java Programming
+Object-Oriented Programming (OOP)
+SQL and Database Management
+Web Development (HTML, CSS, JavaScript)
+Software Development Life Cycle (SDLC)
+Version Control (Git, SVN)
+Debugging and Troubleshooting
+Frameworks (Spring, Hibernate)
+RESTful Web Services
+Agile Methodologies (Scrum, Kanban)
+Test-Driven Development (TDD)
+Algorithms and Data Structures
+
+Soft skills
+- Chứng chỉ sư phạm
+- Chuẩn bị kỹ trước mỗi buổi làm (chưa có)
+- Kỷ luật và tính nhất quán
+- Đúng giờ

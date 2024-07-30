@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+
+    <script
+      src="https://kit.fontawesome.com/08c4cc6c98.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main>
+      <div class="current-music">
+        <div id="song-name">
+          <p>Now playing:</p>
+          <h2>Speak Now</h2>
+        </div>
+        <img
+          src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647"
+          id="dish"
+          alt=""
+        />
+        <div class="buttons">
+          <button id="replay">
+            <i class="fa-solid fa-repeat"></i>
+          </button>
+          <button id="previous">
+            <i class="fa-solid fa-backward-step"></i>
+          </button>
+          <button id="play">
+            <i class="fa-solid fa-play hide"></i>
+            <i class="fa-solid fa-pause"></i>
+          </button>
+          <button id="next"><i class="fa-solid fa-forward-step"></i></button>
+          <button id="mix"><i class="fa-solid fa-shuffle"></i></button>
+        </div>
+        <input
+          id="progress"
+          class="progress"
+          type="range"
+          value="0"
+          step="0.1"
+          min="0"
+          max="100"
+        />
+
+        <audio src="" id="audio"></audio>
+      </div>
+
+      <div class="playlist"></div>
+    </main>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
