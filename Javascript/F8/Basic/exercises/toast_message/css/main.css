@@ -2,7 +2,6 @@ body {
   padding: 40px;
   margin: 0 auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 /* buttons */
@@ -32,6 +31,7 @@ body {
   position: fixed;
   top: 20px;
   right: 20px;
+  z-index: 1000;
 }
 
 .toast {
@@ -47,7 +47,7 @@ body {
   /* truot vao trong, fadeOut sau 3s va khong hien lai - forwards */
   /* animation: slideInLeft ease 0.5s, fadeOut linear 1s 3s forwards; */
   /* troi len neu mat toast o tren */
-  transition: all linear .3s;
+  transition: all linear 0.3s;
 }
 
 /* animation for toast L <= R */
