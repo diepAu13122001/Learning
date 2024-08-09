@@ -2,9 +2,11 @@ package List;
 
 import List.MyLinkedList.MyLinkedList;
 import List.MyLinkedList.Node;
+import List.MyQueue.MyQueue;
 import List.MyStack.MyDynamicStack;
 import List.MyStack.MyStack;
 
+import java.sql.Array;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -43,7 +45,7 @@ public class Runner {
 
 
     public static void main(String[] args) {
-        implementStack();
+        implementQueue();
 
     }
 
@@ -117,6 +119,31 @@ public class Runner {
         Queue queue = new LinkedList();
 
         // my queue ----------------------------------------------
-        
+        System.out.println("Queue --------------------------------");
+        MyQueue nums = new MyQueue();
+        System.out.print("Show list: ");
+        nums.show();
+        nums.enQueue(12); // add value
+        nums.enQueue(13); // add value
+        nums.enQueue(9); // add value
+        nums.enQueue(1); // add value
+        nums.enQueue(10); // add value
+        System.out.print("After add some values: ");
+        nums.show();
+
+        System.out.println("Remove value: " + nums.deQueue());
+        System.out.println("Remove value: " + nums.deQueue());
+        System.out.print("After remove some values: ");
+        nums.show();
+
+        nums.enQueue(5); // add value
+        nums.enQueue(3); // add value
+        nums.enQueue(6); // add value
+        System.out.print("After add some values: ");
+        nums.show();
+
+        System.out.println("Size of nums: " + nums.getSize());
+        System.out.println("Check empty nums: " + nums.isEmpty());
+        System.out.println("Check full list: " + nums.isFull());
     }
 }
