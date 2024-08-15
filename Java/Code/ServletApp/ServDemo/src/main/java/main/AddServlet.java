@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -16,13 +17,13 @@ import jakarta.servlet.http.HttpSession;
  * Servlet implementation class Add
  */
 @WebServlet(name = "Add", value = "/Add")
-public class Add extends HttpServlet {
+public class AddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Default constructor.
 	 */
-	public Add() {
+	public AddServlet() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -53,10 +54,18 @@ public class Add extends HttpServlet {
 //		session.setAttribute("sum", sum);
 //		res.sendRedirect("SecondServlet");
 
+		// servlet config
+		ServletConfig config = getServletConfig();
+		String name_value = config.getInitParameter("name");
+		System.out.println("Name is: " + name_value);
+
 		// dung cookies
-		Cookie cookie = new Cookie("sum", sum + ""); // bien nhap vao phai la string
-		res.addCookie(cookie);
-		res.sendRedirect("SecondServlet");
+//		Cookie cookie = new Cookie("sum", sum + ""); // bien nhap vao phai la string
+//		res.addCookie(cookie);
+//		res.sendRedirect("SecondServlet");
+
+		// Forward to the JSP file
+		req.getRequestDispatcher("./Add.jsp").forward(req, res);
 	}
 
 }

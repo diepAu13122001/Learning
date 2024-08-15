@@ -3,6 +3,8 @@ package main;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -26,6 +28,10 @@ public class SecondServlet extends HttpServlet {
 	}
 
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		// servlet context
+		ServletContext context = getServletContext();
+		String name_value = context.getInitParameter("name");
+
 //		int sum = (int) req.getAttribute("sum"); // cach dispatcher
 
 //		int sum = Integer.parseInt(req.getParameter("sum")); // cach send direct - url rewriting
@@ -43,7 +49,6 @@ public class SecondServlet extends HttpServlet {
 				sum = Integer.parseInt(c.getValue());
 			}
 		}
-		
 
 		PrintWriter out = res.getWriter();
 		out.println("<!DOCTYPE html>");
@@ -55,6 +60,7 @@ public class SecondServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1> Second Servlet </h1>");
 		out.println("<h3> Sum: " + sum + "</h3>");
+		out.println("<h3> Context value of 'name' is : " + name_value + "</h3>");
 		out.println("</body>");
 		out.println("</html>");
 	}
