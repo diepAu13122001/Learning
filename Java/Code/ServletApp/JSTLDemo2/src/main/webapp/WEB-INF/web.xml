@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+	version="5.0">
+	<display-name>JSTLDemo2</display-name>
+	<welcome-file-list>
+		<welcome-file>main.java</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>url_mysql</param-name>
+		<param-value>jdbc:mysql://localhost:3306/jdbc</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>driver_mysql</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>pass_mysql</param-name>
+		<param-value>Diep1312#</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>username_mysql</param-name>
+		<param-value>root</param-value>
+	</context-param>
+</web-app>

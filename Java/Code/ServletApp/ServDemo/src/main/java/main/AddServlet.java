@@ -36,10 +36,10 @@ public class AddServlet extends HttpServlet {
 	}
 
 	public void processRequest(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		int i = Integer.parseInt(req.getParameter("first_num"));
-		int j = Integer.parseInt(req.getParameter("second_num"));
-
-		int sum = i + j;
+//		int i = Integer.parseInt(req.getParameter("first_num"));
+//		int j = Integer.parseInt(req.getParameter("second_num"));
+//
+//		int sum = i + j;
 
 		// change to second servlet by request dispatcher
 //		req.setAttribute("sum", sum);
@@ -55,9 +55,9 @@ public class AddServlet extends HttpServlet {
 //		res.sendRedirect("SecondServlet");
 
 		// servlet config
-		ServletConfig config = getServletConfig();
-		String name_value = config.getInitParameter("name");
-		System.out.println("Name is: " + name_value);
+//		ServletConfig config = getServletConfig();
+//		String name_value = config.getInitParameter("name");
+//		System.out.println("Name is: " + name_value);
 
 		// dung cookies
 //		Cookie cookie = new Cookie("sum", sum + ""); // bien nhap vao phai la string
@@ -65,7 +65,8 @@ public class AddServlet extends HttpServlet {
 //		res.sendRedirect("SecondServlet");
 
 		// Forward to the JSP file
-		req.getRequestDispatcher("./Add.jsp").forward(req, res);
+//		req.getRequestDispatcher("./Add.jsp").forward(req, res);
+		res.sendRedirect("./Add.jsp");
 	}
 
 }
