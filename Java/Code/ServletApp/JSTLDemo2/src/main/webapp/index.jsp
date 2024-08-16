@@ -39,9 +39,5 @@
 		<c:out value="${s}"></c:out>
 		<br>
 	</c:forEach>
-
-	<h1>
-		<a href="./jsp/register.jsp"> Link to form filter </a>
-	</h1>
 </body>
 </html>

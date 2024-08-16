@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Form for filter</title>
+<title>Login form</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -12,20 +12,18 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<%
+	// check khi truy cap vao trang => neu da login thi khong duoc vao
+	if (session.getAttribute("username") != null) {
+		response.sendRedirect("./welcome.jsp");
+	}
+	%>
+
 	<div class="container">
-		<h1>Employee Register Form:</h1>
+		<h1>Employee Login Form:</h1>
 		<div class="card">
 			<div class="card-body">
-				<form action="../register" method="get">
-
-					<div class="form-group row">
-						<label for="email" class="col-sm-2 col-form-label">First
-							Name</label>
-						<div class="col-sm-7">
-							<input type="email" class="form-control" name="email"
-								placeholder="Enter email">
-						</div>
-					</div>
+				<form action="../login" method="post">
 
 					<div class=" form-group row">
 						<label for="username" class="col-sm-2 col-form-label">User
@@ -43,10 +41,10 @@
 								placeholder="Enter Password">
 						</div>
 					</div>
-					
-					<a href="./jsp/login.jsp">Login here!</a>
 
-					<button type="submit" class="btn btn-primary">Register</button>
+					<a href="./register.jsp">Register here!</a> <br>
+
+					<button type="submit" class="btn btn-primary">Login</button>
 				</form>
 			</div>
 		</div>
