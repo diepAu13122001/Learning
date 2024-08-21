@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.1
+Build-Jdk-Spec: 17
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate 4.0 libraries
+Bundle-SymbolicName: org.jboss.tools.hibernate.runtime.v_4_0;singleton:=
+ true
+Bundle-Version: 5.4.23.v20231123-1018
+Bundle-Localization: plugin
+Require-Bundle: org.apache.commons.collections,org.apache.commons.loggin
+ g,org.apache.log4j,org.jboss.tools.hibernate.libs.antlr.v_2_7_7,org.jbo
+ ss.tools.hibernate.libs.dom4j.v_1_6_1,org.jboss.tools.hibernate.libs.fr
+ eemarker.v_2_3,org.jboss.tools.hibernate.libs.hibernate-commons-annotat
+ ions.v_5_1,org.jboss.tools.hibernate.libs.javassist.v_3_28,org.jboss.to
+ ols.hibernate.libs.jboss-logging.v_3_4,org.jboss.tools.hibernate.libs.j
+ pa.v_2_2,org.jboss.tools.hibernate.libs.jtidy.v_r8-20060801,org.jboss.t
+ ools.hibernate.libs.transaction-api.v_1_2,org.jboss.tools.hibernate.run
+ time.common,org.jboss.tools.hibernate.runtime.spi,org.hibernate.eclipse
+ ,slf4j.api
+Bundle-ClassPath: .,lib/hibernate-core-4.0.1.Final.jar,lib/hibernate-ent
+ itymanager-4.0.1.Final.jar,lib/hibernate-tools-4.0.1.Final.jar
+Bundle-Vendor: Red Hat
+Eclipse-BundleShape: dir
+Eclipse-SourceReferences: scm:git:https://github.com/jbosstools/jbosstoo
+ ls-hibernate.git;path="orm/plugin/runtime/org.jboss.tools.hibernate.run
+ time.v_4_0";commitId=3e0f302bc4d296b76fc317ffc0e720429c5ad12f
+Bundle-License: Eclipse Public License;link="http://www.eclipse.org/lega
+ l/epl-v10.html"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
+

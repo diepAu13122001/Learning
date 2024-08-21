@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a870e11-4bfd-48ce-a942-20b9583a8d8d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServletApp/ServDemo/src/main/java/main/AddServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServletApp/ServDemo/src/main/java/main/AddServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServletApp/ServDemo/src/main/webapp/Add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../ServletApp/ServDemo/src/main/webapp/Add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServletApp/Servers/Tomcat v10.1 Server at localhost-config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServletApp/Servers/Tomcat v10.1 Server at localhost-config/server.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5a870e11-4bfd-48ce-a942-20b9583a8d8d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jboss.tools.openshift.cdk.feature"
+      label="%featureName"
+      version="3.24.100.v20231103-1505"
+      provider-name="%providerName"
+      plugin="org.jboss.tools.openshift.cdk.server">
+
+   <description url="%descriptionURL">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.linuxtools.docker.feature"/>
+      <import feature="org.jboss.tools.openshift.feature"/>
+   </requires>
+
+   <plugin
+         id="org.jboss.tools.openshift.cdk.server"
+         download-size="290"
+         install-size="636"
+         version="3.24.100.v20231103-1505"
+         unpack="false"/>
+
+</feature>

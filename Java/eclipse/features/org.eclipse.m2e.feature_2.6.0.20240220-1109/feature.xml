@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.m2e.feature"
+      label="%featureName"
+      version="2.6.0.20240220-1109"
+      provider-name="%providerName"
+      plugin="org.eclipse.m2e.core">
+   <install-handler/>
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <includes
+         id="org.eclipse.m2e.lemminx.feature"
+         version="2.0.600.20240219-1707"
+         optional="true"/>
+
+   <plugin
+         id="org.eclipse.m2e.archetype.common"
+         version="3.2.104"/>
+
+   <plugin
+         id="org.eclipse.m2e.archetype.catalog"
+         version="3.2.1.2"/>
+
+   <plugin
+         id="org.eclipse.m2e.archetype.descriptor"
+         version="3.2.1.2"/>
+
+   <plugin
+         id="org.eclipse.m2e.archetype.maven-artifact-transfer"
+         version="0.13.1.2"/>
+
+   <plugin
+         id="org.eclipse.m2e.model.edit"
+         version="2.0.400.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.core"
+         version="2.6.0.20240220-1109"/>
+
+   <plugin
+         id="org.eclipse.m2e.launching"
+         version="2.0.601.20231119-0901"/>
+
+   <plugin
+         id="org.eclipse.m2e.workspace.cli"
+         version="0.3.1"/>
+
+   <plugin
+         id="org.eclipse.m2e.jdt"
+         version="2.3.400.20240219-2341"/>
+
+   <plugin
+         id="org.eclipse.m2e.editor"
+         version="2.0.400.20240105-1922"/>
+
+   <plugin
+         id="org.eclipse.m2e.maven.runtime"
+         version="3.9.600.20231203-1234"/>
+
+   <plugin
+         id="org.eclipse.m2e.refactoring"
+         version="2.0.302.20231108-0009"/>
+
+   <plugin
+         id="org.eclipse.m2e.discovery"
+         version="2.0.201.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.core.ui"
+         version="2.0.800.20240217-0902"/>
+
+   <plugin
+         id="org.eclipse.m2e.scm"
+         version="2.0.201.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.jdt.ui"
+         version="2.0.400.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.profiles.core"
+         version="2.1.201.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.profiles.ui"
+         version="2.0.301.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.sourcelookup"
+         version="2.0.301.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.sourcelookup.ui"
+         version="2.0.400.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.binaryproject"
+         version="2.1.202.20231119-0901"/>
+
+   <plugin
+         id="org.eclipse.m2e.binaryproject.ui"
+         version="2.0.200.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.apt.core"
+         version="2.2.201.20240125-1714"/>
+
+   <plugin
+         id="org.eclipse.m2e.apt.ui"
+         version="2.0.401.20231030-1438"/>
+
+   <plugin
+         id="org.eclipse.m2e.mavenarchiver"
+         version="2.0.500.20240202-2240"/>
+
+<license url="%licenseURL">
+      %license
+   </license></feature>

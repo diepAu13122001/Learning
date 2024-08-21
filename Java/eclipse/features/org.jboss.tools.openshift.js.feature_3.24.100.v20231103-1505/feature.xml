@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.jboss.tools.openshift.js.feature"
+      label="%featureName"
+      version="3.24.100.v20231103-1505"
+      provider-name="%providerName"
+      plugin="org.jboss.tools.openshift.js">
+
+   <description url="%descriptionURL">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.wst.jsdt.chromium.debug.feature" version="0.4.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.jboss.tools.openshift.js"
+         download-size="19"
+         install-size="45"
+         version="3.24.100.v20231103-1505"
+         unpack="false"/>
+
+</feature>

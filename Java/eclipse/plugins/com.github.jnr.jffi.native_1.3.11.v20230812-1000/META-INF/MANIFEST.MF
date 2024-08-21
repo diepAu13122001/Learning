@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Automatic-Module-Name: org.jnrproject.jffi.nativelibs
+Bnd-LastModified: 1678551168976
+Build-Jdk: 11.0.17
+Built-By: headius
+Bundle-ClassPath: .,jni
+Bundle-Description: Java Foreign Function Interface - Native Libraries
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: jffi
+Bundle-SymbolicName: com.github.jnr.jffi.native
+Bundle-Version: 1.3.11.v20230812-1000
+Fragment-Host: com.github.jnr.jffi
+Require-Bundle: com.github.jnr.jffi
+Tool: Bnd-2.1.0.20130426-122213
+

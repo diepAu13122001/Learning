@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.rcp"
+      label="%featureName"
+      version="4.31.0.v20240229-0520"
+      provider-name="%providerName"
+      plugin="org.eclipse.rcp">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.e4.rcp"
+         version="4.31.0.v20240227-1638"/>
+
+   <plugin
+         id="org.eclipse.help"
+         version="3.10.300.v20240107-2054"/>
+
+   <plugin
+         id="org.eclipse.ui"
+         version="3.205.100.v20240131-1023"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench"
+         version="3.131.100.v20240221-2107"/>
+
+   <plugin
+         id="org.eclipse.update.configurator"
+         version="3.5.300.v20240215-1631"/>
+
+   <plugin
+         id="org.eclipse.rcp"
+         version="4.31.0.v20240229-0520"/>
+
+   <plugin
+         id="org.eclipse.ui.cocoa"
+         os="macosx"
+         ws="cocoa"
+         version="1.3.100.v20230214-1401"/>
+
+</feature>
