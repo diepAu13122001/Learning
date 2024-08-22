@@ -1,7 +1,6 @@
 package core;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import org.hibernate.*;
 import org.hibernate.query.Query;
@@ -29,7 +28,7 @@ public class App {
 //			session.save(libraryAccount);
 //		}
 
-		// use HQL -------------------------
+		// HQL -------------------------
 		// select all
 //		Query q1 = session.createQuery("from LibraryAccount");
 //		List<LibraryAccount> libraryAccounts = q1.list();
@@ -42,7 +41,7 @@ public class App {
 //		LibraryAccount libraryAccount = (LibraryAccount) q2.uniqueResult();
 //		System.out.println(libraryAccount);
 
-		// use SQL ---------------------
+		// SQL -----------------
 //		Query q3 = session.createQuery("select id, username, password from LibraryAccount where id=10");
 //		Object[] libraryAccount = (Object[]) q3.uniqueResult();
 //		System.out.println(libraryAccount[0] + ": " + libraryAccount[1] + ": " + libraryAccount[2]);
@@ -52,11 +51,21 @@ public class App {
 //		for (Object[] account : libraryAccounts) {
 //			System.out.println(account[0] + ": " + account[1] + ": " + account[2]);
 //		}
+		// Native Queries ------------------------------------
+//		SQLQuery q6 = session.createSQLQuery("select * from LibraryAccount where id > 40");
+//		q6.addEntity(LibraryAccount.class); // chuyen tu kieu object ve  kieu mong muon
+//				List<LibraryAccount> libraryAccounts = q6.list(); // tra ve kieu object
+//		for (LibraryAccount libraryAccount : libraryAccounts) {
+//			System.out.println(libraryAccount);
+//		}
 
-		Query q5 = session.createQuery("select count(password) from LibraryAccount where id > :b");
-		q5.setParameter("b", 25); // phai co dau : truoc ten param 
-		Long countPass = (Long) q5.uniqueResult();
-		System.out.println("Count password: " + countPass);
+		SQLQuery q7 = session.createSQLQuery("select username, password from LibraryAccount where id > 40");
+		q7.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		List libraryAccounts = q7.list(); // tra ve kieu object
+		for (Object o : libraryAccounts) {
+			Map m = (Map) o;
+			System.out.println(m.get("username") + ": " + m.get("password"));
+		}
 
 		session.getTransaction().commit();
 		session.close();
