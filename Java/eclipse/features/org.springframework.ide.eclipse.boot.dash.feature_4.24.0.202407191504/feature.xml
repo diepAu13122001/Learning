@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*******************************************************************************
+ * Copyright (c) 2005, 2019 Spring IDE Developers
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * https://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Spring IDE Developers - initial API and implementation
+ *******************************************************************************/
+ -->
+<feature
+      id="org.springframework.ide.eclipse.boot.dash.feature"
+      label="%featureName"
+      version="4.24.0.202407191504"
+      provider-name="%providerName"
+      plugin="org.springframework.ide.eclipse">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseUrl">
+      %license
+   </license>
+
+   <plugin
+         id="org.springframework.ide.eclipse.boot.dash"
+         download-size="852"
+         install-size="1763"
+         version="4.24.0.202407191504"
+         unpack="false"/>
+
+   <plugin
+         id="org.springframework.ide.eclipse.boot.dash.docker"
+         download-size="119"
+         install-size="229"
+         version="4.24.0.202407191504"
+         unpack="false"/>
+
+   <plugin
+         id="org.springframework.ide.eclipse.boot.refactoring"
+         download-size="34"
+         install-size="77"
+         version="4.24.0.202407191504"
+         unpack="false"/>
+
+   <plugin
+         id="org.springframework.ide.eclipse.editor.support"
+         download-size="251"
+         install-size="535"
+         version="4.24.0.202407191456"
+         unpack="false"/>
+
+   <plugin
+         id="org.springframework.ide.eclipse.beans.ui.live"
+         download-size="40"
+         install-size="73"
+         version="4.24.0.202407191504"
+         unpack="false"/>
+
+   <plugin
+         id="org.springframework.ide.eclipse.docker.client"
+         download-size="13857"
+         install-size="15638"
+         version="4.24.0.202407191504"
+         unpack="false"/>
+
+   <plugin
+         id="io.projectreactor.reactor-core"
+         download-size="1589"
+         install-size="3610"
+         version="3.3.1.202211021051-RELEASE"
+         unpack="false"/>
+
+   <plugin
+         id="org.reactivestreams.reactive-streams"
+         download-size="20"
+         install-size="36"
+         version="1.0.3"
+         unpack="false"/>
+
+   <plugin
+         id="org.springsource.ide.eclipse.commons.jdk_tools"
+         download-size="1"
+         install-size="1"
+         version="4.24.0.202407191456"
+         unpack="false"/>
+
+</feature>

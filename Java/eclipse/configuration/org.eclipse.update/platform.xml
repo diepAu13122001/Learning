@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1724083874573" transient="false" version="3.0">
+<config date="1724408068589" transient="false" version="3.0">
 	<site updateable="true" url="platform:/base/" enabled="true" policy="USER-EXCLUDE">
 		<feature id="org.eclipse.emf.edit" version="2.22.0.v20231208-1346" url="features/org.eclipse.emf.edit_2.22.0.v20231208-1346/">
 		</feature>
@@ -28,6 +28,8 @@
 		<feature id="org.eclipse.mylyn.team.feature" version="4.2.0.v20240220-1733" url="features/org.eclipse.mylyn.team.feature_4.2.0.v20240220-1733/" plugin-identifier="org.eclipse.mylyn.context.core">
 		</feature>
 		<feature id="org.eclipse.emf.mapping.ecore" version="2.14.0.v20230211-1150" url="features/org.eclipse.emf.mapping.ecore_2.14.0.v20230211-1150/">
+		</feature>
+		<feature id="org.springframework.tooling.boot.ls.feature" version="4.24.0.202407191456" url="features/org.springframework.tooling.boot.ls.feature_4.24.0.202407191456/">
 		</feature>
 		<feature id="org.eclipse.jst.common.fproj.enablement.jdt" version="3.29.0.v202308161955" url="features/org.eclipse.jst.common.fproj.enablement.jdt_3.29.0.v202308161955/" plugin-identifier="org.eclipse.jst.common.project.facet.core">
 		</feature>
@@ -125,6 +127,8 @@
 		</feature>
 		<feature id="org.eclipse.datatools.enablement.sqlite.feature" version="1.15.0.202311071249" url="features/org.eclipse.datatools.enablement.sqlite.feature_1.15.0.202311071249/" plugin-identifier="org.eclipse.datatools.enablement.finfo">
 		</feature>
+		<feature id="org.springframework.ide.eclipse.xml.namespaces.feature" version="4.24.0.202407191504" url="features/org.springframework.ide.eclipse.xml.namespaces.feature_4.24.0.202407191504/" plugin-identifier="org.springframework.ide.eclipse">
+		</feature>
 		<feature id="org.eclipse.mylyn.commons.notifications.feature" version="4.2.0.v20240203-1124" url="features/org.eclipse.mylyn.commons.notifications.feature_4.2.0.v20240203-1124/" plugin-identifier="org.eclipse.mylyn.commons.core">
 		</feature>
 		<feature id="org.eclipse.wst.json_ui.feature" version="1.1.11.v202308160419" url="features/org.eclipse.wst.json_ui.feature_1.1.11.v202308160419/" plugin-identifier="org.eclipse.wst.json.ui">
@@ -136,6 +140,8 @@
 		<feature id="org.eclipse.datatools.doc.user" version="1.16.0.202311071249" url="features/org.eclipse.datatools.doc.user_1.16.0.202311071249/">
 		</feature>
 		<feature id="org.eclipse.jdt.bcoview.feature" version="1.2.300.v20240118-1157" url="features/org.eclipse.jdt.bcoview.feature_1.2.300.v20240118-1157/">
+		</feature>
+		<feature id="org.springframework.boot.ide.main.feature" version="4.24.0.202407191504" url="features/org.springframework.boot.ide.main.feature_4.24.0.202407191504/">
 		</feature>
 		<feature id="org.eclipse.pde" version="3.15.300.v20240229-0520" url="features/org.eclipse.pde_3.15.300.v20240229-0520/">
 		</feature>
@@ -216,6 +222,8 @@
 		<feature id="org.jboss.tools.maven.sourcelookup.feature" version="1.10.100.v20221212-1016" url="features/org.jboss.tools.maven.sourcelookup.feature_1.10.100.v20221212-1016/" plugin-identifier="org.jboss.tools.maven.sourcelookup.core">
 		</feature>
 		<feature id="org.eclipse.wst.common_core.feature" version="3.31.0.v202308161955" url="features/org.eclipse.wst.common_core.feature_3.31.0.v202308161955/">
+		</feature>
+		<feature id="org.springframework.ide.eclipse.boot.dash.feature" version="4.24.0.202407191504" url="features/org.springframework.ide.eclipse.boot.dash.feature_4.24.0.202407191504/" plugin-identifier="org.springframework.ide.eclipse">
 		</feature>
 		<feature id="org.eclipse.datatools.enablement.sybase.feature" version="1.15.0.202311071249" url="features/org.eclipse.datatools.enablement.sybase.feature_1.15.0.202311071249/" plugin-identifier="org.eclipse.datatools.enablement.sybase">
 		</feature>
