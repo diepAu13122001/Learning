@@ -34,5 +34,6 @@ public class App {
 		// setter injection -------------------------------------------
 		Student student = (Student) applicationContext.getBean("student");
 		System.out.println(student.getAge());
+		student.getComputer().start();
 	}
 }

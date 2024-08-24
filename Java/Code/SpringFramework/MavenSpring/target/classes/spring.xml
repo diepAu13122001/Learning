@@ -10,12 +10,25 @@
 		scope="singleton"></bean> <bean id="student_prototype" class="com.diep.SpringProject1.Student" 
 		scope="prototype"></bean> -->
 
-	<bean id="laptop" class="com.diep.SpringProject1.Laptop"></bean>
+	<!-- autowire by type -->
+	<!-- <bean id="computer" class="com.diep.SpringProject1.Laptop"></bean> 
+		<bean id="desktop" class="com.diep.SpringProject1.Desktop"></bean> <bean 
+		id="student" class="com.diep.SpringProject1.Student" autowire="byType"> <property 
+		name="age" value="15"></property> </bean> -->
 
-	<bean id="student" class="com.diep.SpringProject1.Student">
-		<constructor-arg value="12"></constructor-arg>
+	<!-- autowire by name -->
+	<!-- <bean id="computer" class="com.diep.SpringProject1.Laptop"></bean> 
+		<bean id="desktop" class="com.diep.SpringProject1.Desktop"></bean> <bean 
+		id="student" class="com.diep.SpringProject1.Student" autowire="byName"> <property 
+		name="age" value="15"></property> <property name="computer" ref="computer"></property> 
+		</bean> -->
+
+	<!-- giai quyet confused by type = primary -->
+	<bean id="computer" class="com.diep.SpringProject1.Laptop"
+		primary="true"></bean>
+	<bean id="desktop" class="com.diep.SpringProject1.Desktop"></bean>
+	<bean id="student" class="com.diep.SpringProject1.Student"
+		autowire="byType">
 		<property name="age" value="15"></property>
-		<property name="laptop" ref="laptop"></property>
 	</bean>
-
 </beans>
