@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?metadataRepository version='1.2.0'?>
-<repository name='update site: https://download.jboss.org/jbosstools/photon/stable/updates/' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
+<repository name='update site: https://download.jboss.org/jbosstools/photon/stable/updates/' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
   <properties size='2'>
-    <property name='p2.timestamp' value='1724383594700'/>
+    <property name='p2.timestamp' value='1724459378193'/>
     <property name='site.checksum' value='0'/>
   </properties>
 </repository>
