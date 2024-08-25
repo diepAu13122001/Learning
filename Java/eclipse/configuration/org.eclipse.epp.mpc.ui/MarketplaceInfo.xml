@@ -75,6 +75,14 @@
     </object>
    </void>
    <void method="put">
+    <string>org.brainwy.liclipsetext.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#2894763</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>org.eclipse.buildship</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -461,6 +469,14 @@
     </object>
    </void>
    <void method="put">
+    <string>net.harawata.mybatipse.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#1467819</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>org.fusesource.ide.syndesis.extension.feature</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -628,6 +644,14 @@
     <object class="java.util.ArrayList">
      <void method="add">
       <string>https://marketplace.eclipse.org#1617241</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>com.redhat.eclipseide.jdtlsclient.feature</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>https://marketplace.eclipse.org#5578650</string>
      </void>
     </object>
    </void>
@@ -1183,6 +1207,14 @@
     </object>
    </void>
    <void method="put">
+    <string>https://marketplace.eclipse.org#1467819</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>net.harawata.mybatipse.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
     <string>https://marketplace.eclipse.org#11179</string>
     <object class="java.util.ArrayList">
      <void method="add">
@@ -1207,6 +1239,14 @@
      </void>
      <void method="add">
       <string>org.springframework.ide.eclipse.boot.dash.feature</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#2894763</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>org.brainwy.liclipsetext.feature</string>
      </void>
     </object>
    </void>
@@ -1307,6 +1347,14 @@
     <object class="java.util.ArrayList">
      <void method="add">
       <string>io.openliberty.tools.eclipse.feature.group</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>https://marketplace.eclipse.org#5578650</string>
+    <object class="java.util.ArrayList">
+     <void method="add">
+      <string>com.redhat.eclipseide.jdtlsclient.feature</string>
      </void>
     </object>
    </void>
