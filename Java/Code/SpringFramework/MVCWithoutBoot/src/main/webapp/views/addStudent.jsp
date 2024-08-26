@@ -11,8 +11,8 @@
 		<label for="id">Id:</label> <input id="id" name="id" placeholder="Id"
 			type="number" min=1 /> <br> <label for="name">Name:</label> <input
 			id="name" name="name" placeholder="Name" type="text" /> <br> <label
-			for="gpa">GPA:</label> <input id="gpa" name="gpa" placeholder="GPA"
-			type="number" min=0 max=4 step="0.001" /> <br> <input
+			for="point">Point:</label> <input id="point" name="point" placeholder="point"
+			type="number" min=0 max=10 step="0.001" /> <br> <input
 			type="submit" value="Submit" id="button-1" />
 
 	</form>

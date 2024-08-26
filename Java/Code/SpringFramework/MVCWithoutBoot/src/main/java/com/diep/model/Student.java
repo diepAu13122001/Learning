@@ -1,14 +1,18 @@
 package com.diep.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "students")
 public class Student {
 	private int id;
 	private String name;
-	private double gpa;
+	private double point;
 
-	public Student(int id, String name, double gpa) {
+	public Student(int id, String name, double point) {
 		this.id = id;
 		this.name = name;
-		this.gpa = gpa;
+		this.point = point;
 	}
 
 	public Student() {
@@ -31,16 +35,16 @@ public class Student {
 	}
 
 	public double getGpa() {
-		return gpa;
+		return point;
 	}
 
 	public void setGpa(double gpa) {
-		this.gpa = gpa;
+		this.point = gpa;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", gpa=" + gpa + "]";
+		return "Student [id=" + id + ", name=" + name + ", point=" + point + "]";
 	}
 
 }

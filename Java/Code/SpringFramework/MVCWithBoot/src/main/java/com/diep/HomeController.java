@@ -13,6 +13,8 @@ import org.springframework.web.servlet.view.JstlView;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class HomeController {
@@ -31,7 +33,7 @@ public class HomeController {
 		return "index";
 	}
 
-	@GetMapping("/sum")
+//	@GetMapping("/sum")
 	// way 1 to get input --------------------------------------------------
 //	public String sum(HttpServletRequest req, HttpServletResponse res) {
 //		int a = Integer.parseInt(req.getParameter("num-a"));
@@ -56,9 +58,18 @@ public class HomeController {
 
 	// way 3 using model/ modelMap
 	// --------------------------------------------------
+//	public String sum(@RequestParam("num-a") int a, @RequestParam("num-b") int b, Model model) {
+//		int sum = a + b;
+//		model.addAttribute("sum", sum);
+//		return "result";
+//	}
+
+	// post -----------------------------------------------
+	@PostMapping("/sum")
 	public String sum(@RequestParam("num-a") int a, @RequestParam("num-b") int b, Model model) {
 		int sum = a + b;
 		model.addAttribute("sum", sum);
 		return "result";
 	}
+
 }
