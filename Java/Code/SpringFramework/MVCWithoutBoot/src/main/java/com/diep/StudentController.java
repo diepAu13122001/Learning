@@ -4,43 +4,57 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.diep.DAO.StudentDAO;
 import com.diep.model.Student;
 
 @Controller
 public class StudentController {
+
+	@Autowired
+	StudentDAO studentDAO;
+
 	@GetMapping("/")
 	public String home() {
 		return "addStudent";
 	}
 
-//	@GetMapping("/addStudent")
+//	@GetMapping("/studentAccount")
 //	public String getStudentList(Student s) {
 //		return "studentAccount";
 //		// su dung ten class => viet thuong chu cai dau => ten bien trong jsp
 //	}
 
-//	@GetMapping("/addStudent")
+//	@GetMapping("/studentAccount")
 //	public String getStudentList1(@ModelAttribute Student s) {
 //		return "studentAccount";
 //		// su dung ten class => viet thuong chu cai dau => ten bien trong jsp
 //	}
 
 	@PostMapping("/studentAccount")
-	public String getStudent(@ModelAttribute("s1") Student s) {
+	public String getStudent(@ModelAttribute("s1") Student s, Model m) {
+		studentDAO.addStudent(s);
+		m.addAttribute("student", studentDAO.getStudent(s.getId()));
 		return "studentAccount";
 	}
 
+//	@GetMapping("/studentAccount")
+//	public String getStudent(@RequestParam int id, Model m) {
+//		m.addAttribute("student", studentDAO.getStudent(id));
+//		return "studentAccount";
+//	}
+
 	@GetMapping("/studentList")
 	public String getStudentList(Model m) {
-		List<Student> students = Arrays.asList(new Student(3, "ABC", 2.9), new Student(4, "XYZ", 3.9));
-		m.addAttribute("students", students);
+		m.addAttribute("students", studentDAO.getStudents());
 		return "studentList";
 	}
 

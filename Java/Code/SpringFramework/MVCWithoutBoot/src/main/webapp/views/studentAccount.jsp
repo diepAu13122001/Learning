@@ -12,7 +12,7 @@
 	<!-- 
 		 <p>Your information: ${student }</p>
 	 -->
-	<p>Your information: ${s1 }</p>
+	<p>Your information: ${student }</p>
 	<a href="studentList">Student list</a>
 </body>
 </html>

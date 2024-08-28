@@ -1,10 +1,12 @@
 package com.diep.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "students")
-public class Student {
+public class Student implements Serializable {
+	@Id
 	private int id;
 	private String name;
 	private double point;
