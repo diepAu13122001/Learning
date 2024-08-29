@@ -1,14 +1,18 @@
 package com.diep.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Student {
+	@Id
 	private int id;
 	private String name;
-	private double gpa;
+	private double point;
 
-	public Student(int id, String name, double gpa) {
+	public Student(int id, String name, double point) {
 		this.id = id;
 		this.name = name;
-		this.gpa = gpa;
+		this.point = point;
 	}
 
 	public Student() {
@@ -30,17 +34,17 @@ public class Student {
 		this.name = name;
 	}
 
-	public double getGpa() {
-		return gpa;
+	public double getPoint() {
+		return point;
 	}
 
-	public void setGpa(double gpa) {
-		this.gpa = gpa;
+	public void setPoint(double point) {
+		this.point = point;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", gpa=" + gpa + "]";
+		return "Student [id=" + id + ", name=" + name + ", point=" + point + "]";
 	}
 
 }

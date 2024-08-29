@@ -14,5 +14,9 @@
 			placeholder="Number" type="number" min=0 max=10 /> <br>
 		<button type="submit">Submit</button>
 	</form>
+	<a href="studentHome">Add student</a>
+	<br>
+	<a href="studentList">Student list</a>
+
 </body>
 </html>
