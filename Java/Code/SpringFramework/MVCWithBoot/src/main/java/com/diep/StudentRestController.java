@@ -15,7 +15,8 @@ public class StudentRestController {
 
 	@GetMapping(path = "/r-students", produces = { "application/xml" })
 //	@ResponseBody // no show prefix and suffix in text/plain data
-	public List<Student> findAll() {
+	public List<Student> findAll() throws Exception {
+//		throw new Exception();
 		return this.studentRepo.findAll();
 	}
 
