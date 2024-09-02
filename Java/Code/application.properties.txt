@@ -1,0 +1,33 @@
+application.properties ----------------------------------------------------
+
+#custom port
+server.port=8081
+
+#tomcat jasper link
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+
+# use mysql
+spring.datasource.url=jdbc:mysql://localhost:3306/jdbc
+spring.datasource.username=root
+spring.datasource.password=Diep1312#
+
+## Hibernate Properties
+# The SQL dialect makes Hibernate generate better SQL for the chosen database
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.show-sql = true
+spring.jpa.hibernate.ddl-auto = update
+
+# Logs
+logging.level.org.hibernate = ERROR
+logging.level.root=info
+# remember create app.log before run
+logging.file.name=app.log
+
+// Loi cast Nature => Java class ----------------------------------------------
+1. Truy cap terminal => vao folder project 
+2. mvn eclipse:clean/ mvn eclipse:eclipse (1 trong 2)
+3. configure => create as maven project
+
+
