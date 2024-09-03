@@ -8,7 +8,7 @@ spring.mvc.view.prefix=/views/
 spring.mvc.view.suffix=.jsp
 
 # use mysql
-spring.datasource.url=jdbc:mysql://localhost:3306/jdbc
+spring.datasource.url=jdbc:mysql://localhost:3306/jdbc?createDatabaseIfNotExist=true
 spring.datasource.username=root
 spring.datasource.password=Diep1312#
 
@@ -31,3 +31,85 @@ logging.file.name=app.log
 3. configure => create as maven project
 
 
+// data Quiz app --------------------------------------------------------------
+INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
+('What is the correct way to declare a variable in JavaScript?', 'javascript', 'varName = ''value'';', 'let varName;', 'variable varName = ''value'';', 'let varName = ''value'';', 'let varName = ''value'';', 'easy'),
+('Which of the following is not a JavaScript data type?', 'javascript', 'string', 'boolean', 'array', 'integer', 'integer', 'medium'),
+('How do you create a function in JavaScript?', 'javascript', 'def functionName()', 'function = myFunction()', 'func myFunction()', 'function myFunction()', 'function myFunction()', 'easy'),
+('Which operator is used to assign a value to a variable in JavaScript?', 'javascript', '*', '==', '===', '=', '=', 'easy'),
+('What is the correct syntax for referring to an external script called ''script.js''?', 'javascript', '<script name=''script.js''>', '<script href=''script.js''>', '<script src=''script.js''>', '<script src=''script.js''>', '<script src=''script.js''>', 'medium');
+
+INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
+('How do you print ''Hello, World!'' to the console in Python?', 'python', 'console.log(''Hello, World!'')', 'echo ''Hello, World!''', 'System.out.println(''Hello, World!'')', 'print(''Hello, World!'')', 'print(''Hello, World!'')', 'easy'),
+('Which of the following is not a Python data type?', 'python', 'list', 'tuple', 'dictionary', 'tree', 'tree', 'medium'),
+('How do you start a comment in Python?', 'python', '// This is a comment', '<!-- This is a comment -->', '/* This is a comment */', '# This is a comment', '# This is a comment', 'easy'),
+('Which function is used to get the length of a list in Python?', 'python', 'length(list)', 'count(list)', 'size(list)', 'len(list)', 'len(list)', 'medium'),
+('How do you create a variable with the floating number 2.8 in Python?', 'python', 'var x = 2.8', 'float x = 2.8', 'x = ''2.8''', 'x = 2.8', 'x = 2.8', 'easy');
+
+INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
+('What is the size of an int in Java?', 'java', '16 bits', '64 bits', '8 bits', '32 bits', '32 bits', 'easy'),
+('Which keyword is used to define a subclass in Java?', 'java', 'implements', 'inherits', 'extends', 'extends', 'extends', 'medium'),
+('Which method is used to start a thread in Java?', 'java', 'init()', 'run()', 'begin()', 'start()', 'start()', 'medium'),
+('What is the default value of a boolean variable in Java?', 'java', 'true', '1', 'null', 'false', 'false', 'easy'),
+('Which method is used to compare two strings in Java?', 'java', 'compare()', 'equalsIgnoreCase()', 'compareToIgnoreCase()', 'equals()', 'equals()', 'medium');
+
+INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
+('Which of the following is the correct way to declare a variable in C#?', 'c#', 'int x;', 'var x;', 'x = 10;', 'declare x as int;', 'int x;', 'easy'),
+('What keyword is used to define a method in C#?', 'c#', 'function', 'def', 'method', 'void', 'void', 'easy'),
+('Which of these is a reference type in C#?', 'c#', 'int', 'float', 'struct', 'string', 'string', 'medium'),
+('What is the default value of an uninitialized int variable in C#?', 'c#', 'null', '1', '-1', '0', '0', 'easy'),
+('Which access modifier in C# allows a member to be accessible within its own class and derived classes?', 'c#', 'public', 'private', 'internal', 'protected', 'protected', 'medium');
+
+[
+{
+  "title": "Which of these is not a feature of Java?",
+  "category": "java",
+  "option1": "Object-Oriented",
+  "option2": "Portable",
+  "option3": "Secure",
+  "option4": "Pointer Arithmetic",
+  "right_answer": "Pointer Arithmetic",
+  "level": "medium"
+},
+{
+  "title": "Which package contains the Random class in Java?",
+  "category": "java",
+  "option1": "java.lang",
+  "option2": "java.util",
+  "option3": "java.io",
+  "option4": "java.math",
+  "right_answer": "java.util",
+  "level": "easy"
+},
+{
+  "title": "Which method is used to stop a thread in Java?",
+  "category": "java",
+  "option1": "terminate()",
+  "option2": "end()",
+  "option3": "stop()",
+  "option4": "halt()",
+  "right_answer": "stop()",
+  "level": "medium"
+},
+{
+  "title": "Which of these is used to handle exceptions in Java?",
+  "category": "java",
+  "option1": "catch",
+  "option2": "try",
+  "option3": "finally",
+  "option4": "All of the above",
+  "right_answer": "All of the above",
+  "level": "easy"
+},
+{
+  "title": "Which operator is used to perform a bitwise OR in Java?",
+  "category": "java",
+  "option1": "&",
+  "option2": "^",
+  "option3": "&&",
+  "option4": "|",
+  "right_answer": "|",
+  "level": "medium"
+}
+
+]
