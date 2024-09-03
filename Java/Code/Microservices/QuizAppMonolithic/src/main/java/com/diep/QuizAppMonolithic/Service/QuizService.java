@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 
-import com.diep.QuizAppMonolithic.Answer.Answer;
 import com.diep.QuizAppMonolithic.DAO.*;
 import com.diep.QuizAppMonolithic.model.*;
 

@@ -25,6 +25,11 @@ logging.level.root=info
 # remember create app.log before run
 logging.file.name=app.log
 
+#Eureka server -----------
+eureka.instance.hostname=localhost
+eureka.client.fetch-registry=false
+eureka.client.register-with-eureka=false
+
 // Loi cast Nature => Java class ----------------------------------------------
 1. Truy cap terminal => vao folder project 
 2. mvn eclipse:clean/ mvn eclipse:eclipse (1 trong 2)
