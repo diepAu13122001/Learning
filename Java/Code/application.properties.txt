@@ -35,86 +35,177 @@ eureka.client.register-with-eureka=false
 2. mvn eclipse:clean/ mvn eclipse:eclipse (1 trong 2)
 3. configure => create as maven project
 
+// security + oauth2 -------------------------------------------------------------
+<dependencies>
+    <!-- Spring Boot Web -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-// data Quiz app --------------------------------------------------------------
-INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
-('What is the correct way to declare a variable in JavaScript?', 'javascript', 'varName = ''value'';', 'let varName;', 'variable varName = ''value'';', 'let varName = ''value'';', 'let varName = ''value'';', 'easy'),
-('Which of the following is not a JavaScript data type?', 'javascript', 'string', 'boolean', 'array', 'integer', 'integer', 'medium'),
-('How do you create a function in JavaScript?', 'javascript', 'def functionName()', 'function = myFunction()', 'func myFunction()', 'function myFunction()', 'function myFunction()', 'easy'),
-('Which operator is used to assign a value to a variable in JavaScript?', 'javascript', '*', '==', '===', '=', '=', 'easy'),
-('What is the correct syntax for referring to an external script called ''script.js''?', 'javascript', '<script name=''script.js''>', '<script href=''script.js''>', '<script src=''script.js''>', '<script src=''script.js''>', '<script src=''script.js''>', 'medium');
+    <!-- Spring Boot Security with OAuth2 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
 
-INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
-('How do you print ''Hello, World!'' to the console in Python?', 'python', 'console.log(''Hello, World!'')', 'echo ''Hello, World!''', 'System.out.println(''Hello, World!'')', 'print(''Hello, World!'')', 'print(''Hello, World!'')', 'easy'),
-('Which of the following is not a Python data type?', 'python', 'list', 'tuple', 'dictionary', 'tree', 'tree', 'medium'),
-('How do you start a comment in Python?', 'python', '// This is a comment', '<!-- This is a comment -->', '/* This is a comment */', '# This is a comment', '# This is a comment', 'easy'),
-('Which function is used to get the length of a list in Python?', 'python', 'length(list)', 'count(list)', 'size(list)', 'len(list)', 'len(list)', 'medium'),
-('How do you create a variable with the floating number 2.8 in Python?', 'python', 'var x = 2.8', 'float x = 2.8', 'x = ''2.8''', 'x = 2.8', 'x = 2.8', 'easy');
+    <!-- Spring Data JPA -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
 
-INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
-('What is the size of an int in Java?', 'java', '16 bits', '64 bits', '8 bits', '32 bits', '32 bits', 'easy'),
-('Which keyword is used to define a subclass in Java?', 'java', 'implements', 'inherits', 'extends', 'extends', 'extends', 'medium'),
-('Which method is used to start a thread in Java?', 'java', 'init()', 'run()', 'begin()', 'start()', 'start()', 'medium'),
-('What is the default value of a boolean variable in Java?', 'java', 'true', '1', 'null', 'false', 'false', 'easy'),
-('Which method is used to compare two strings in Java?', 'java', 'compare()', 'equalsIgnoreCase()', 'compareToIgnoreCase()', 'equals()', 'equals()', 'medium');
+    <!-- H2 Database (For Testing) -->
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <scope>runtime</scope>
+    </dependency>
 
-INSERT INTO question (title, category, option1, option2, option3, option4, right_answer, level) VALUES
-('Which of the following is the correct way to declare a variable in C#?', 'c#', 'int x;', 'var x;', 'x = 10;', 'declare x as int;', 'int x;', 'easy'),
-('What keyword is used to define a method in C#?', 'c#', 'function', 'def', 'method', 'void', 'void', 'easy'),
-('Which of these is a reference type in C#?', 'c#', 'int', 'float', 'struct', 'string', 'string', 'medium'),
-('What is the default value of an uninitialized int variable in C#?', 'c#', 'null', '1', '-1', '0', '0', 'easy'),
-('Which access modifier in C# allows a member to be accessible within its own class and derived classes?', 'c#', 'public', 'private', 'internal', 'protected', 'protected', 'medium');
+    <!-- Thymeleaf (For Views, Optional) -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+</dependencies>
+----------------------------------------
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
-[
-{
-  "title": "Which of these is not a feature of Java?",
-  "category": "java",
-  "option1": "Object-Oriented",
-  "option2": "Portable",
-  "option3": "Secure",
-  "option4": "Pointer Arithmetic",
-  "right_answer": "Pointer Arithmetic",
-  "level": "medium"
-},
-{
-  "title": "Which package contains the Random class in Java?",
-  "category": "java",
-  "option1": "java.lang",
-  "option2": "java.util",
-  "option3": "java.io",
-  "option4": "java.math",
-  "right_answer": "java.util",
-  "level": "easy"
-},
-{
-  "title": "Which method is used to stop a thread in Java?",
-  "category": "java",
-  "option1": "terminate()",
-  "option2": "end()",
-  "option3": "stop()",
-  "option4": "halt()",
-  "right_answer": "stop()",
-  "level": "medium"
-},
-{
-  "title": "Which of these is used to handle exceptions in Java?",
-  "category": "java",
-  "option1": "catch",
-  "option2": "try",
-  "option3": "finally",
-  "option4": "All of the above",
-  "right_answer": "All of the above",
-  "level": "easy"
-},
-{
-  "title": "Which operator is used to perform a bitwise OR in Java?",
-  "category": "java",
-  "option1": "&",
-  "option2": "^",
-  "option3": "&&",
-  "option4": "|",
-  "right_answer": "|",
-  "level": "medium"
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+            scope: profile, email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+-----------------------------------
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@Component
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .anyRequest().authenticated()
+            )
+            .oauth2Login(oauth2 -> oauth2
+                .userInfoEndpoint(userInfo -> userInfo
+                    .userService(oAuth2UserService())
+                )
+            );
+        return http.build();
+    }
+
+    @Bean
+    public OAuth2UserService<OAuth2UserRequest, OAuth2User> oAuth2UserService() {
+        return new CustomOAuth2UserService();
+    }
 }
+------------------------------------------
+import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
-]
+@Service
+public class CustomOAuth2UserService extends DefaultOAuth2UserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public OAuth2User loadUser(OAuth2UserRequest userRequest) {
+        OAuth2User oAuth2User = super.loadUser(userRequest);
+
+        // Extract user information
+        String email = oAuth2User.getAttribute("email");
+        String name = oAuth2User.getAttribute("name");
+
+        // Check if user exists in database
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            // Save new user if they don't exist
+            user = new User();
+            user.setName(name);
+            user.setEmail(email);
+            userRepository.save(user);
+        }
+
+        return oAuth2User;
+    }
+}
+------------------------------------------------
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String email;
+
+    // Getters and Setters
+}
+-----------------------------------------
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByEmail(String email);
+}
+------------------------------------------
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+    @GetMapping("/user")
+    public String getUserInfo(@AuthenticationPrincipal OAuth2User principal) {
+        return "User Info: " + principal.getAttributes();
+    }
+}
+------------------------------------------
+
