@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add React in HTML</title>
+  </head>
+  <body>
+    <h1 id="react-ver"></h1>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script>
+      document.getElementById(
+        "react-ver"
+      ).innerText = `React version: ${React.version}`;
+    </script>
+  </body>
+</html>
