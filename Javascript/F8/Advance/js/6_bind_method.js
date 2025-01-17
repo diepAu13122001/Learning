@@ -45,3 +45,68 @@ clickMeBtn.onclick = person.get_fullname; // this tro toi button click me
 // => tra ve undefined
 // cach viet dung:
 clickMeBtn.onclick = person.get_fullname.bind(person);
+
+// ===============================================
+// cách sử dụng $ để lưu giá trị của element trong HTML
+// const $ = document.querySelector;
+// const $$ = document.querySelectorAll;
+
+// console.log(document.querySelector("body")); // tra ve body
+// console.log($("body")); // tra ve undefined vi this tro toi global (window)
+// => dung bind: const $ = document.querySelector.bind(document);
+
+// vi du: tao app them - xoa item cho danh sach
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+const app = (() => {
+  const items = ["A", "B", "C"];
+  // lay element tu hTML
+  const input = $("#input_field");
+  const addBtn = $("#add_btn");
+  const list = $("#output_list");
+
+  return {
+    // ham khoi tao
+    init() {
+      // handle add item
+      // addBtn.onclick = this.add.bind(this);
+      addBtn.onclick = () => {
+        this.add();
+        // truong hop nay dung arrow function k co context => tu dong tro ra ngoai
+      };
+      // handle remove item
+      list.onclick = this.delete.bind(this);
+      this.render();
+    },
+    // add input data in list
+    add() {
+      if (input === "") return;
+      items.push(input.value);
+      this.render();
+    },
+    // render list
+    render() {
+      list.innerHTML = "";
+      items.forEach((item, index) => {
+        if (item == "") {
+          return;
+        }
+        list.innerHTML += `<li>${item} <button class="del_btn" data-index="${index}">X</button></li>`;
+      });
+    },
+    // remove item in UI
+    delete(event) {
+      // xoa chinh xac phan tu tai vi tri click (chi xoa khi click vao button)
+      const del_btn_clicked = event.target.closest(".del_btn");
+      if (del_btn_clicked) {
+        // xoa trong danh sach
+        // dat them thuoc tinh "data-[...]" => JS co the goi lai thong qua dataset.[...]
+        items.splice(del_btn_clicked.dataset.index, 1);
+        this.render();
+      }
+    },
+  };
+})();
+
+app.init();
