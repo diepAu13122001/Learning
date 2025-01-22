@@ -20,7 +20,7 @@ function App({ todos, filters }) {
         id="toggle-all"
         class="toggle-all"
         type="checkbox"
-        ${todos.every(todo => todo.completed) && 'checked'}
+        ${todos.every((todo) => todo.completed) && "checked"}
         onchange="dispatch('ALL-COMPLETED', this.checked)"
       />
       <label for="toggle-all">Mark all as complete</label>
@@ -65,7 +65,8 @@ function App({ todos, filters }) {
                 <input
                   class="edit"
                   value="${todo.name}"
-                  onkeyup="(event.keyCode === 13 && this.value.trim()) && dispatch('EDIT', this.value.trim(), ${todo.id})"
+                  onblur="dispatch('EDIT', this.value.trim(), ${todo.id})"
+                  onkeyup="((event.keyCode === 13 || event.keyCode === 27) && this.value.trim()) && dispatch('EDIT', this.value.trim(), ${todo.id})"
                 />
               </li>
             `;
