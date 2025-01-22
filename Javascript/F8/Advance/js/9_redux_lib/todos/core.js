@@ -2,13 +2,8 @@
 export default function html([first, ...strings], ...values) {
   // cong don code html vao list => hien thi duoi dang string
   return values
-    .reduce(
-      (acc, cur) => {
-        acc.concat(cur, strings.shift());
-      },
-      [first]
-    )
-    .filter((x) => (x && x !== true) || x === 0) // neu khong co gia tri thi xoa
+    .reduce((acc, cur) => acc.concat(cur, strings.shift()), [first])
+    .filter((x) => (x && x !== true) || x === 0) // Loại bỏ giá trị `null`, `undefined`, `false` nhưng giữ lại `0`
     .join("");
 }
 
@@ -20,7 +15,7 @@ export function createStore(reducer) {
 
   function render() {
     // load cac the len giao dien
-    for (const [root, component] of root) {
+    for (const [root, component] of roots) {
       const output = component();
       root.innerHTML = output;
     }
@@ -38,14 +33,13 @@ export function createStore(reducer) {
     },
     // ham day du lieu tu store vao view (selector la lua chon du lieu can hien thi)
     // selector mặc định là 1 hàm; (state) => state để duyệt qua tất cả phần tử trong state
+    // truyen het du lieu vao component dưới dạng object
+    // vì các thuộc tính đều có khả năng là object nên cần thêm Object.assign để truyền thành thuộc tính
     connect(selector = (state) => state) {
       // return lại 1 arrow function(return thêm 1 arrow function nữa)
       return (component) =>
-        (props, ...args) => {
-          // truyen het du lieu vao component dưới dạng object
-          // vì các thuộc tính đều có khả năng là object nên cần thêm Object.assign để truyền thành thuộc tính
+        (props, ...args) =>
           component(Object.assign({}, props, selector(state), ...args));
-        };
     },
   };
 }
