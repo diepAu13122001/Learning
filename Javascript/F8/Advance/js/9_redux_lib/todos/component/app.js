@@ -66,7 +66,7 @@ function App({ todos, filters }) {
                   class="edit"
                   value="${todo.name}"
                   onblur="dispatch('EDIT', this.value.trim(), ${todo.id})"
-                  onkeyup="((event.keyCode === 13 || event.keyCode === 27) && this.value.trim()) && dispatch('EDIT', this.value.trim(), ${todo.id})"
+                  onkeyup="(event.keyCode === 13 || event.keyCode === 27) && dispatch('EDIT', this.value.trim(), ${todo.id})"
                 />
               </li>
             `;

@@ -38,15 +38,20 @@ export default function reducer(state = init, action, args) {
     case "EDIT":
       const editTaskName = args[0];
       const editTaskId = args[1];
-      const edited_list = state.todos.map((todo) => {
-        if (todo.id === editTaskId) {
-          return {
-            id: editTaskId,
-            name: editTaskName,
-            completed: false,
-          };
-        } else return todo;
-      });
+      let edited_list = [];
+      if (!editTaskName) {
+        edited_list = state.todos.filter((todo) => todo.id !== editTaskId);
+      } else {
+        edited_list = state.todos.map((todo) => {
+          if (todo.id === editTaskId) {
+            return {
+              id: editTaskId,
+              name: editTaskName,
+              completed: false,
+            };
+          } else return todo;
+        });
+      }
       return {
         ...state,
         todos: edited_list,
