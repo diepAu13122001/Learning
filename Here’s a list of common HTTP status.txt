@@ -1,0 +1,89 @@
+Here’s a list of common HTTP status codes grouped by category, along with brief explanations for each:
+
+### **1xx: Informational Responses**
+These codes indicate that the server has received the request and the client should continue the request or ignore it if already finished.
+
+- **100 Continue**: The server has received the initial part of the request and the client should continue with the rest of the request.
+- **101 Switching Protocols**: The server is switching protocols as per the client's request (e.g., from HTTP to WebSocket).
+- **102 Processing (WebDAV)**: The server has received the request and is processing it, but no response is available yet.
+
+---
+
+### **2xx: Success**
+These codes indicate that the request was successfully received, understood, and accepted.
+
+- **200 OK**: The request was successful, and the server returned the requested resource or confirmed the operation.
+- **201 Created**: The request has been fulfilled, and a new resource has been created (typically used with POST requests).
+- **202 Accepted**: The request has been accepted for processing, but the processing has not yet completed (e.g., background processing).
+- **203 Non-Authoritative Information**: The request was successful, but the returned metadata comes from a third-party source (not the origin server).
+- **204 No Content**: The request was successful, but the server has no content to return. Often used when updating or deleting a resource.
+- **205 Reset Content**: The server has fulfilled the request, but the client should reset the document view.
+- **206 Partial Content**: The server is delivering only part of the resource (due to a range header in the request).
+
+---
+
+### **3xx: Redirection**
+These codes indicate that further action is needed to complete the request, usually involving a redirection to another resource.
+
+- **300 Multiple Choices**: There are multiple options for the resource that the client may follow.
+- **301 Moved Permanently**: The resource has been permanently moved to a new URL.
+- **302 Found (Temporary Redirect)**: The resource is temporarily located at a different URL, but future requests should continue to use the original URL.
+- **303 See Other**: The response can be found under another URL, and the client should use a GET method to retrieve it.
+- **304 Not Modified**: The resource has not been modified since the last request (often used with caching).
+- **307 Temporary Redirect**: Similar to 302, but the method and body of the original request should be reused for the new request.
+- **308 Permanent Redirect**: Similar to 301, but ensures that the method and body are preserved in the redirection.
+
+---
+
+### **4xx: Client Errors**
+These codes indicate that the request contains bad syntax or cannot be fulfilled by the server.
+
+- **400 Bad Request**: The server could not understand the request due to invalid syntax.
+- **401 Unauthorized**: Authentication is required to access the resource. Often used with an `WWW-Authenticate` header.
+- **402 Payment Required**: Reserved for future use, originally intended for digital payment systems.
+- **403 Forbidden**: The server understands the request but refuses to authorize it.
+- **404 Not Found**: The server could not find the requested resource.
+- **405 Method Not Allowed**: The request method (e.g., POST, GET) is not supported for the requested resource.
+- **406 Not Acceptable**: The server cannot generate a response that matches the client’s request criteria (Accept headers).
+- **407 Proxy Authentication Required**: Similar to 401, but the client must authenticate itself with a proxy.
+- **408 Request Timeout**: The server timed out waiting for the request.
+- **409 Conflict**: The request could not be completed due to a conflict with the current state of the resource (e.g., a version conflict in a version-controlled resource).
+- **410 Gone**: The resource is no longer available and will not be available again.
+- **411 Length Required**: The server requires the `Content-Length` header in the request.
+- **412 Precondition Failed**: The server does not meet one of the preconditions specified by the client in the request headers.
+- **413 Payload Too Large**: The request is larger than the server is willing or able to process.
+- **414 URI Too Long**: The URI provided in the request is too long for the server to process.
+- **415 Unsupported Media Type**: The request entity has a media type which the server or resource does not support.
+- **416 Range Not Satisfiable**: The client asked for a portion of the resource (byte range), but the server cannot supply that portion.
+- **417 Expectation Failed**: The server cannot meet the requirements of the `Expect` header.
+- **418 I'm a Teapot**: A joke status code from the Hyper Text Coffee Pot Control Protocol. It indicates that the server refuses to brew coffee because it is, in fact, a teapot.
+- **422 Unprocessable Entity (WebDAV)**: The request was well-formed but could not be followed due to semantic errors.
+- **429 Too Many Requests**: The user has sent too many requests in a given amount of time (rate limiting).
+
+---
+
+### **5xx: Server Errors**
+These codes indicate that the server failed to fulfill a valid request.
+
+- **500 Internal Server Error**: A generic error message when the server encounters an unexpected condition.
+- **501 Not Implemented**: The server does not support the functionality required to fulfill the request.
+- **502 Bad Gateway**: The server was acting as a gateway or proxy and received an invalid response from the upstream server.
+- **503 Service Unavailable**: The server is not ready to handle the request, usually due to temporary overloading or maintenance.
+- **504 Gateway Timeout**: The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server.
+- **505 HTTP Version Not Supported**: The server does not support the HTTP protocol version used in the request.
+- **507 Insufficient Storage (WebDAV)**: The server cannot store the representation needed to complete the request.
+- **511 Network Authentication Required**: The client needs to authenticate to gain network access.
+
+---
+
+### Key HTTP Status Codes:
+- **200 OK**: Successful request.
+- **201 Created**: Resource successfully created.
+- **202 Accepted**: Request accepted but processing is not complete.
+- **400 Bad Request**: The server cannot understand the request due to invalid syntax.
+- **401 Unauthorized**: Authentication is required.
+- **403 Forbidden**: The server refuses to authorize the request.
+- **404 Not Found**: The server can't find the requested resource.
+- **500 Internal Server Error**: The server encountered an unexpected condition.
+
+Each status code gives specific insight into what occurred with the request, allowing clients to understand and act accordingly.

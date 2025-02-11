@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX</title>
+
+    <!-- bắt buộc đặt theo thứ tự react => react dom -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- thư viện babel để phân tích JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+    JSX -> Javascript XML: hỗ trợ viết cú pháp HTML (XML) trong JS
+    (là đoạn mã HTML nhưng viết trong file JS, nếu cần truyền biến dùng {}
+    var a = "mno";
+    var element = <h1> {a} </h1>; => truyền biến a vào code html cho element
+    )
+
+    1. Thay thế React.createElement() vì cú pháp lệnh khá dài và phức tạp
+    2. Sử dụng JSX (LƯU Ý: không phải là react element nên không thể truyên thẳng 
+      cho react dom) => Thư viện Babel được viết bằng JS dùng để PHÂN TÍCH VÀ CHUYỂN ĐỔI CÚ PHÁP ES6+ 
+      thành ES5 -> hỗ trợ trình duyệt đọc và chạy.
+      => Cách sử dụng tính năng chuyển đổi JSX trong Babel: https://bit.ly/2VOIMN7
+    3. JSX không phải là HTML, cần có JS, Babel để dùng JSX
+    4. [LƯU Ý] khi viết JSX không thể viết rời 2 element ngoài, phải có 1 thẻ lớn để bao lại
+    vd: <div> <h1> </h1> || <h2> </h2> </div>
+    => có thể thay thể sử dụng bằng [React.Fragment] (không tạo thêm thẻ div dư)
+    <ul>
+      <li>Javascript</li>
+      <li>ReactJS</li>
+    </ul>
+    -->
+    <div id="root"></div>
+
+    <!-- <script id="react-dom">
+      // tao the ul (react element)
+      const ul = React.createElement(
+        "ul",
+        null,
+        // them con
+        React.createElement("li", null, "Javascript"),
+        React.createElement("li", null, "ReactJS")
+      );
+      // add ul vao root
+      ReactDOM.render(ul, document.getElementById("root"));
+    </script> -->
+
+    <!-- [CHÚ Ý] cần thêm type thành babel để babel có thể nhận diện code và 
+     chuyển đổi cú pháp -->
+    <script id="jsx" type="text/babel">
+      // render 1 list
+      const object_list = [
+        { name: "A", id: 1 },
+        { name: "B", id: 2 },
+        { name: "C", id: 3 },
+        { name: "D", id: 4 },
+      ];
+
+      // sử dụng nhiều thẻ cho 1 element
+      const titles = (
+        <React.Fragment>
+          <h1>JSX - React-DOM </h1>
+          <h2> example for react Fragment</h2>
+        </React.Fragment>
+      );
+      // viết bằng React-DOM
+      // const titles2 = React.createELement(
+      //   React.Fragment,
+      //   null,
+      //   React.createELement("h1", null, "JSX"),
+      //   React.createELement("h1", null, "JSX")
+      // );
+
+      // khi truyền 1 danh sách làm con của 1 element -> báo lỗi thiếu key
+      const ul1 = (
+        <ul style={{ color: "blue" }}>
+          {object_list.map((element) => (
+            <li key={element.id}>
+              {element.name}{" "}
+              <button onClick={() => alert(`ID: ${element.id}`)}>Get id</button>
+            </li>
+          ))}
+        </ul>
+      );
+
+      // get root element
+      const app = document.getElementById("root");
+      // React-DOM => render UI
+      const root = ReactDOM.createRoot(app);
+      root.render(titles);
+      // root.render(ul1);
+    </script>
+  </body>
+</html>
