@@ -21,13 +21,23 @@ const postItems = [
   },
 ];
 
-function PostItem(item) {
-  console.log(item.item);
+// using destructuring => quickly 
+function exampleItem({ prop1, prop2, prop3 }) {
+  return (
+    <div>
+      this is {prop1}, {prop2} and {prop3}
+    </div>
+  );
+}
 
+// call full props -> need to call sub prop again
+function PostItem(props) {
+  const img = props.img;
+  const name = props.name;
   return (
     <div className="postItem">
-      <img className="postImg" src={item.item.img} alt="" />
-      <div className="postName">{item.item.name}</div>
+      <img className="postImg" src={img} alt="" />
+      <div className="postName">{name}</div>
       <button type="button" className="postDetailBtn">
         View more
       </button>
@@ -35,17 +45,19 @@ function PostItem(item) {
   );
 }
 
-const postList = (
-  <div id="postList">
-    {postItems.map((item) => (
-      <PostItem item={item} key={item.name} />
-    ))}
-  </div>
-);
+function App() {
+  return (
+    <div id="postList">
+      {postItems.map((item) => (
+        <PostItem name={item.name} img={item.img} key={item.name} />
+      ))}
+    </div>
+  );
+}
 
 // get root element
 const rootElement = document.getElementById("root");
 // React-DOM => render UI
 const rootReact = ReactDOM.createRoot(rootElement);
 // add element
-rootReact.render(postList);
+rootReact.render(<App />);

@@ -22,22 +22,29 @@
     <div id="root"></div>
 
     <!-- 
+    Props dùng để truyền dữ liệu từ component cha xuống component con, 
+    tương tự nhưu cách truyền đối số khi gọi hàm.
+
     1. [REACT ELEMENT] là 1 tag html trong JSX
     - Sử dụng props giống với attribute trong tag HTML
-    - 2 props class, for => className, htmlFor
-    - Phải tuân theo quy ước có sẵn
+    - 2 props class, for (label) => className, htmlFor
+    - Phải tuân theo quy ước có sẵn (không chế tên :v)
     2. [REACT COMPONNENT] là 1 function tạo component trong JSX
-    - Sử dụng props giống như đối số cho component
+    - Sử dụng props giống như đối số cho component (function)
     - Tự do đặt tên props
-      + Đặt theo camelCase
-      + Có thể bao gồm dấu gạch ngang
+      + Đặt theo camelCase (chỉ được sử dụng như này - không nên dùng -)
+      + Có thể bao gồm dấu gạch ngang (data-id => không nên dùng)
     
     [CHÚ Ý]:
-    - Prop "key" là prop đặc biệt
+    - Prop "key" là prop đặc biệt (props.key -> undefined)
     - Props cơ bản là đối số của Component => Props có thể là bất cứ kiểu dữ liệu nào
-    - Sử dụng destructuring
+    => nếu props là 1 hàm -> gọi là callback
+    - Sử dụng destructuring -> sử dụng cho nhiều biến (dấu ...)
     -->
 
-    <script src="./script.js" type="text/babel"></script>
+    <!-- basic code -->
+    <!-- <script src="./app.js" type="text/babel"></script> -->
+    <!-- call api and render -->
+    <script src="./api_app.js" type="text/babel"></script>
   </body>
 </html>
