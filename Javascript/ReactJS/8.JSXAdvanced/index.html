@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM Event lab</title>
+
+    <!-- bắt buộc đặt theo thứ tự react => react dom -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- thư viện babel để phân tích JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 
+    Làm việc với JSX
+    [PHẦN 1]
+    - Xử lý DOM events
+    - (BẮT BUỘC) Component do chúng ta tự định nghĩa phải viết in hoa kí tự đầu
+    vd: App -> app (chương trình không chạy)
+    - Chọn component trong 1 object
+    - Booleans, null, undefined không được render
+    - kết hợp toán tử logic để render theo điều kiện
+
+    [PHẦN 2]
+    - Props trong JSX:
+      + <YourComponent
+          propName1 = "String literals"
+          propName2 = {expression}
+        />
+      + Props default to "true"
+      + Spread/ Rest prop
+      + Children prop
+        . <YourComponent>String literals</YourComponent> 
+        . <YourComponent>{expression}</YourComponent> 
+      + Render props
+    -->
+
+    <script src="./app.js" type="text/babel"></script>
+  </body>
+</html>

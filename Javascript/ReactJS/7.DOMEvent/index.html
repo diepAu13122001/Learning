@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM Event lab</title>
+
+    <!-- bắt buộc đặt theo thứ tự react => react dom -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- thư viện babel để phân tích JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 
+    DOM event (search để xem tên của các sự kiện)
+    ** React DOM event cần viết theo dạng camelCase và không được viết tắt.
+    vd: onclick -> onClick; ondbclick -> onDoubleClick
+    ** Không nên xử lý các logic (code hàm bắt sự kiện) trong UI Components (function postItem)
+    -->
+    
+    <!-- call api and render -->
+    <script src="./api_app.js" type="text/babel"></script>
+  </body>
+</html>
