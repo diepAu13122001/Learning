@@ -1,0 +1,8 @@
+- NodeJS: là 1 javascript runtime, tạo môi trường độc lập để viết JS thay vì phải sử dụng trình duyệt như bình thường.
+- Để NodeJS có thể chạy được Javascript, sử dụng [Chrome's V8 JavaScript engine] (được phát triển bởi Google)
+- Webpack: gom các file cùng kiểu lại thành 1 file + giảm những khoảng không cần thiết (xuống dòng, dấu, biến dài -> ngắn) 
+để giảm kích thước/ giảm kết nối project khi triển khai thực tế.
+=> Cách cài webpack: npm install webpack webpack-cli --save-dev
+- Công dụng (sử dụng nodeJS làm gì?):
+    + Tạo máy chủ web (giống cơ chế của liveServer)
+    + Không cần cài (config) quá nhiều thư viện CDN do có npm (là thư viện) dùng để quản lý các thư viện cho NodeJS
