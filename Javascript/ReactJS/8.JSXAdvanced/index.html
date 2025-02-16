@@ -26,21 +26,37 @@
     [PHẦN 1]
     - Xử lý DOM events
     - (BẮT BUỘC) Component do chúng ta tự định nghĩa phải viết in hoa kí tự đầu
-    vd: App -> app (chương trình không chạy)
+      vd: App -> app (chương trình không chạy)
     - Chọn component trong 1 object
-    - Booleans, null, undefined không được render
+    - Booleans, null, undefined không được render (dữ liệu sẽ không hiển thị trên màn hình)
     - kết hợp toán tử logic để render theo điều kiện
 
     [PHẦN 2]
     - Props trong JSX:
       + <YourComponent
-          propName1 = "String literals"
-          propName2 = {expression}
+          propName1 = "String literals"  => nhớ phải truyền nháy kép 
+          propName2 = {expression} => chỉ truyền biểu thức (expression) (có 2 hoặc 3 vế, k được if/ switch, ...)
         />
-      + Props default to "true"
+      -----------------------
+      + Props default to "true" vd: <Button prop1 /> (không gán giá trị -> true)
+      -----------------------
       + Spread/ Rest prop
+      vd: <Input label="" type="" placeholder="" />
+      => function Input ({label, ... inputProps}) { => k cần phải ghi lại quá nhiều thuộc tính
+          return (
+            <input
+                label={label}
+                {... inputProps} -> tương đương với cách viết: type="" placeholder=""
+            />
+          )
+      } 
+      -----------------------
       + Children prop
-        . <YourComponent>String literals</YourComponent> 
+        . <YourComponent>String literals</YourComponent> (tên prop là children - cố định)
+        vd: function Button ({title, children}) { ... }
+        <Button>Children here</Button> => chỉ hiện phần children 
+        <Button title="Title here" /> => chỉ hiện phần title  
+
         . <YourComponent>{expression}</YourComponent> 
       + Render props
     -->
