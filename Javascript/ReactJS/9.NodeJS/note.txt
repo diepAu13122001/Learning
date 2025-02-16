@@ -6,3 +6,33 @@
 - Công dụng (sử dụng nodeJS làm gì?):
     + Tạo máy chủ web (giống cơ chế của liveServer)
     + Không cần cài (config) quá nhiều thư viện CDN do có npm (là thư viện) dùng để quản lý các thư viện cho NodeJS
+
+------------------------------------------------
+- NPM: khi cài Node sẽ được cài kèm thư viện này
+=> là 1 CLI (command line interface) hỗ trợ người dùng tương tác qua terminal 
+    + Project scope (cài biến vào thư mục project cụ thể)
+        . npm i <lib1> <lib2> => lưu vào dependencies
+        . npm i -D react react-dom => lưu vào devDependencies (npm install --save-dev react react-dom)
+        . npm uninstall react react-dom
+    + Global scope (cài vào thư mục users trong máy tính)
+        . npm i -g create-react-app / npm install --global create-react-app
+        . npm uninstall -g create-react-app
+- NPX: khi cài Node sẽ được cài kèm thư viện này
+=> Hỗ trợ thực thi những thư viện có cung cấp file 'bin'
+    + Tại sao dùng NPX? không cài các thư viện vào máy của mình (global) => nhẹ, luôn được cập nhật phiên bản mới nhất
+    + Cách hoạt động: chọc vào thư mục bin của thư viện để thực thi, nếu không tìm thấy ở phạm vi project => tìm ở 
+    phạm vi global => ** không có thì tự tải phiên bản mới nhất => chạy xong tự xóa **
+    + Gặp lỗi khi: npx create-react-app tiktok => lỗi thì cài ở global (-g)
+        . đặt folder không cách, không dấu tiếng việt 
+- YARN (Yet Another Resource Negotiator): ra đời sau NPM 6 năm với mục đích cải thiện những vấn đề của NPM (performance, security)
+    + file yarn.lock >< package-lock.json (cả 2 file dùng để quản lý thư viện cần thiết cho dự án và những 
+    thư viện phụ thuộc kèm theo => tăng performance vd: khi xóa hết node-modules folder -> cài lại chỉ cần `npm i` => đọc từ file 
+    package-lock để lấy lại thư viện cần cài)
+    + Yarn cài song song các thư viện, còn NPM sẽ cài tuần tự từng thư viện khi yêu cầu cài nhiều => giảm thời gian cài đặt 
+    + Reinstall lib nhanh hơn (do yarn sẽ tạo thêm 1 phân vùng bộ nhớ để clone project => nếu cần cài lại ở project gốc sẽ kiểm tra 
+    từ project clone => có sẽ copy qua => tiết kiệm time nhưng nặng máy hơn)
+- YARN install: npm i -g yarn 
+- [LƯU Ý] 
+    + Luôn bật development server (npm start || yarn start)
+    + Nếu có dư bộ nhớ và cần tối ưu tốc độ duyệt web => yarn 
+    + Nếu tài nguyên không dư dả và cần giảm tải trọng lượng project => npm 
