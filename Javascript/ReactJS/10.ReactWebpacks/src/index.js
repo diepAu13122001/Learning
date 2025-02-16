@@ -1,6 +1,6 @@
 import React from "react"; // nạp thư viện react
-import ReactDOM from "react-dom"; // nạp thư viện react-dom
-import { createRoot } from 'react-dom/client';
+import ReactDOM from "react-dom/client"; // nạp thư viện react-dom
+// import { createRoot } from 'react-dom/client';
 
 // Tạo component App
 function App() {
@@ -14,6 +14,6 @@ function App() {
 // get root element
 const rootElement = document.getElementById("root");
 // React-DOM => render UI
-const rootReact = createRoot(rootElement);
+const rootReact = ReactDOM.createRoot(rootElement);
 // add element
 rootReact.render(<App />);
