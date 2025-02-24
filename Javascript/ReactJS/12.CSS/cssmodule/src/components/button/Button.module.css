@@ -1,0 +1,14 @@
+.btn {
+  border-radius: 10px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.primary {
+  background-color: black;
+  color: white;
+}
