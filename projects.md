@@ -74,32 +74,25 @@ This project is a scalable e-commerce platform inspired by Shopee, using a micro
    Websocket / Socket.IO
 ```
 ## 🔸 Deployment Suggestions
-
-Component	Platform / Tool
-
-Frontend	Vercel / Netlify / S3 + CloudFront
-Backend Services	Docker containers on Render / EC2
-Databases	MySQL (AWS RDS), MongoDB Atlas
-Caching / Queueing	Redis Cloud, Kafka (Confluent)
-Logs & Metrics	Prometheus + Grafana
-File Storage	AWS S3
+- Frontend	Vercel / Netlify / S3 + CloudFront
+- Backend Services	Docker containers on Render / EC2
+- Databases	MySQL (AWS RDS), MongoDB Atlas
+- Caching / Queueing	Redis Cloud, Kafka (Confluent)
+- Logs & Metrics	Prometheus + Grafana
+- File Storage	AWS S3
 
 ## 🔁 DevOps & CI/CD
-
-Task	Tools
-
-Source Control	GitHub / GitLab
-CI/CD Pipelines	GitHub Actions / GitLab CI
-Dockerization	Docker + Docker Compose
-API Documentation	Swagger / SpringDoc OpenAPI
-Secrets Management	GitHub Secrets / AWS Parameter Store
-Monitoring	Prometheus + Grafana
-Error Tracking	Sentry / Datadog / LogRocket
-Kubernetes (Optional)	Helm + EKS or GKE
+- Source Control	GitHub / GitLab
+- CI/CD Pipelines	GitHub Actions / GitLab CI
+- Dockerization	Docker + Docker Compose
+- API Documentation	Swagger / SpringDoc OpenAPI
+- Secrets Management	GitHub Secrets / AWS Parameter Store
+- Monitoring	Prometheus + Grafana
+- Error Tracking	Sentry / Datadog / LogRocket
+- Kubernetes (Optional)	Helm + EKS or GKE
 
 ## ✅ Summary
-
-Frontend: React + Tailwind + Redux + Socket.IO
-Backend: Microservices using Spring Boot, MongoDB, MySQL, Kafka
-Deployment: Cloud-ready (Render, AWS, Docker)
-DevOps: CI/CD, Prometheus, Swagger, Dockerized services
+- Frontend: React + Tailwind + Redux + Socket.IO
+- Backend: Microservices using Spring Boot, MongoDB, MySQL, Kafka
+- Deployment: Cloud-ready (Render, AWS, Docker)
+- DevOps: CI/CD, Prometheus, Swagger, Dockerized services
